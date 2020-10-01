@@ -1,12 +1,48 @@
-<div class = "main">
-    <div class = "col col1">
-        <div class = "button">
-            Create Instance
+<div class="main">
+    <div class="create">
+        <div class="button" (click) = "newrec()">
+            Create a new record
         </div>
     </div>
-    <div class = "col col2">
-        <div class = "button" (click) = "record()">
-            Enter record
+    <div class="farmnames" *ngFor="let farm of farms">
+        <div class="farm" (click)="getrecords(farm.payload.doc.id)">
+            {{farm.payload.doc.id}}
         </div>
     </div>
-  </div>
+    <div class="records" *ngFor="let record of livestock">
+        <div class="record">
+            <div class="rec">
+                <B>ID:</B> {{record.payload.doc.data().ID}}
+            </div>
+            <div class="rec" *ngIf = "record.payload.doc.data().Birth != 'None'">
+                <B>Birth Date:</B> {{record.payload.doc.data().Birth}}
+            </div>
+            <div class="rec" *ngIf = "record.payload.doc.data().Buy != 'None'">
+                <B>Buying Date:</B> {{record.payload.doc.data().Buy}}
+            </div>
+            <div class="rec">
+                <B>Type:</B> {{record.payload.doc.data().Type}}
+            </div>
+            <div class="rec" *ngIf = "record.payload.doc.data().Breed != null">
+                <B>Breed:</B> {{record.payload.doc.data().Breed}}
+            </div>
+            <div class="rec" *ngIf = "record.payload.doc.data().SubBreed != null">
+                <B>Sub Breed:</B> {{record.payload.doc.data().SubBreed}}
+            </div>
+            <div class="rec">
+                <B>Age:</B> {{record.payload.doc.data().Age}}
+            </div>
+            <div class="rec">
+                <B>Weight:</B> {{record.payload.doc.data().Weight}}
+            </div>
+            <div class="rec">
+                <B>Place Of Origin:</B> {{record.payload.doc.data().PlaceOfOrigin}}
+            </div>
+            <div class="rec">
+                <B>Quantity:</B> {{record.payload.doc.data().Quantity}}
+            </div>
+            <div class="rec" (click)="edit(order)"> &#9998;</div>
+            <div class="rec" (click)="delete(order)"> &#10008;</div>
+        </div>
+    </div>
+</div>

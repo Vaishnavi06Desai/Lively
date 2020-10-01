@@ -58,8 +58,6 @@ export class InventoryrecordComponent implements OnInit {
    })
 
    submit(){
-     if(this.selected1 == 'birth') this.form.get('Birth').setValue(this.selected1);
-     else this.form.get('Buy').setValue(this.selected1);
      this.form.get('Type').setValue(this.type);
      this.form.get('Breed').setValue(this.breed);
      this.form.get('SubBreed').setValue(this.subbreed);

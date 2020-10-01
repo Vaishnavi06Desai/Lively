@@ -45,7 +45,7 @@ const routes: Routes = [
     component: InventoryComponent
   },
   {
-    path: 'inventory/record',
+    path: 'inventory/newrecord',
     component: InventoryrecordComponent
   },
   {
