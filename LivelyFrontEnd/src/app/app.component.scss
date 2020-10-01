@@ -1,0 +1,182 @@
+.common_main{
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+  
+.nav-drawer{
+    background-image: linear-gradient(to bottom right, var(--vt1), var(--vt3));
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    color: black;
+    border-radius: 5px;
+    flex-direction: column;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-right: solid thin white;
+    transition: width 0.2s ease;
+    overflow-y: hidden;
+    position: fixed;
+    top: 39px;
+}
+  
+.nav-drawer-hamburger{
+    height: 4vh;
+    width: 100%;
+    font-size: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    text-align: right;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.greeting{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    margin-top: 0;
+    background-color: white;
+    padding: 2%;
+    height:fit-content;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+  
+.user{
+    font-size: 100%;
+    text-align: center;
+    padding-right: 5%;
+}
+
+.nav-drawer-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-drawer-item{
+    background-color: rgb(255, 255, 255, 0.5);
+    display: flex;
+    margin: 5px 0;
+    padding: 5px 0;
+    font-size: 100%;
+    color: black;
+    cursor: pointer;
+}
+
+.nav-drawer-item-text{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    flex-basis: 80%;
+    text-align: center;
+}
+
+.content{
+    justify-content: space-around;
+    top: 39px;
+    background-image: url(../assets/images/bg.png);
+    background-size: 100% 100%;
+    //position: -webkit-sticky;
+    //top: 39px;
+}
+
+.nav-bar{
+    width: 100vw;
+    height: 6vh;
+    background-color: var(--vt3);
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    position: fixed;
+    top: 39px;
+    z-index: 999;
+}
+
+.nav-bar-left{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 40%;
+}
+
+.nav-bar-hamburger{
+    font-size: 2.5vh;
+    flex-basis: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sitename{
+    font-size: 4vh;
+    flex-basis: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-bar-right{
+    display: flex;
+    margin-right:10px;
+    flex-basis: 60%;
+    font-size: 20px;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.nav-bar-item{
+    color: black;
+    display: flex;
+    //flex-direction: column;
+    justify-content: center;
+}
+
+.mainpage{
+    //background-image: url(../assets/images/bg.png);
+    background-size: 100% 100%;
+    margin-top: 6vh;
+    min-height: 94vh;
+    //opacity: 0.5;
+}
+
+.nav-bar-item-text{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    margin: 0 3px;
+}
+
+@media(max-width: 700px) {
+
+  .nav-bar-left{
+      flex-basis: 10%;
+  }
+
+  .sitename{
+      display: none;
+  }
+  .nav-bar-right{
+    font-size: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 90%;
+    //width: 100vw;
+  }
+
+  .nav-drawer{
+    width: 55vw;
+  }
+  .nav-bar-item-text{
+    display: none;
+  }
+
+
+}

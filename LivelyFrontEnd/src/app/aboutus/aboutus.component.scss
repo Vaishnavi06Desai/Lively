@@ -1,0 +1,228 @@
+.main{
+    min-height: 94vh;
+    //border: solid green;
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-evenly;
+}
+
+.page{
+    height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.aboutusrow{
+    //height: 30%;
+    flex-basis: 100%;
+    display: flex;
+    //border: solid black;
+}
+
+.title{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
+    font-size: 300%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(221, 202, 255);
+}
+.row1col1{
+    flex-basis: 60%;
+     background-color: rgb(58, 35, 91);
+    //background-color: black;
+    height: 100%;
+    width: 60%;
+    display: flex;
+}
+.row1col1:hover{
+    animation: card1 0.5s ease-out 0s forwards;
+}
+
+@keyframes card1{
+    from{
+        flex-basis: 60%;
+        //width: 60%;
+        //background-color:  rgb(117, 89, 174);
+        background-color: rgb(58, 35, 91);;
+    }
+
+    to{
+        flex-basis: 70%;
+        //width: 70%;
+        //background-color:  rgb(164, 127, 197);
+        background-color: rgb(97, 75, 128);
+    }
+}
+
+.row11{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    flex-basis: 50%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 150%;
+}
+.infocard{
+    flex-basis: 40%;
+    background-color: rgb(255, 255, 255, 0.6);
+    width: 80%;
+    align-self: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2%;
+}
+
+.infoname{
+
+    flex-basis: 10%;
+    text-align: center;
+}
+
+.information{
+    flex-basis: 90%;
+    padding: 5%;
+}
+.row1col2{
+    flex-basis: 40%;
+    background-color: rgb(178, 172, 242);
+    height: 100%;
+    display: flex;
+}
+.row1col2:hover{
+    animation: card2 0.5s ease-out 0s forwards;
+}
+@keyframes card2{
+    from{
+        flex-basis: 40%;
+        //width: 60%;
+        background-color:   rgb(178, 172, 242);
+    }
+
+    to{
+        flex-basis: 50%;
+        //width: 70%;
+        //background-color:  rgb(46, 66, 129);
+        background-color: rgb(139, 129, 241);
+    }
+}
+
+.row12{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-basis: 50%;
+}
+
+.namecard{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.photo{
+    flex-basis: 70%;
+    width: 50%;
+    align-self: center;
+    border-radius: 50%;
+    background-size: 100% 100%;
+}
+
+.photo:hover{
+    animation: photos 0.5s ease-out 0s forwards;
+}
+
+@keyframes photos{
+    from{
+        flex-basis: 70%;
+        border-radius: 50%;
+
+    }
+    to{
+        flex-basis: 100%;
+        border-radius: 2%;
+
+    }
+}
+
+.name{
+    flex-basis: 20%;
+    text-align: center;
+    font-size: 200%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.row2col1{
+    flex-basis: 20%;
+    background-color:white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo{
+    flex-basis: 90%;
+    align-self: center;
+    background-image: url(../../assets/images/logo.png);
+    background-size: 100% 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row2col2{
+    flex-basis: 50%;
+    background-color:rgb(117, 89, 174);;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aboutval{
+    flex-basis: 90%;
+    align-self: center;
+    background-color: rgb(255, 255, 255, 0.5);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    padding: 2%;
+}
+.row2col3{
+    flex-basis: 30%;
+    background-color:rgb(46, 66, 129);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contactinfo{
+    flex-basis: 50%;
+    align-self: center;
+    background-color: rgb(255, 255, 255, 0.5);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 200%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+}

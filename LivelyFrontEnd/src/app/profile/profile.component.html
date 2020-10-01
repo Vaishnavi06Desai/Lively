@@ -1,0 +1,25 @@
+<div class = "main" *ngIf = "access">
+    <div class = "profilecard">
+        
+        <div class = "profiletitle">
+            PROFILE
+        
+        
+        </div>
+        <div class="man">
+            <img src="../../assets/images/man.png" width="100" height="100">
+
+
+        </div>
+        <div class="profilefield">
+            <div class="input">
+                    <div class="ip">Username: <b>{{profile.payload.data().username}}</b></div>
+                    <div class="ip">Email Id: <b>{{profile.payload.data().email}}</b></div>
+                    <div class="ip">Contact Number: <b>{{profile.payload.data().contact}}</b></div>
+            </div>  
+
+
+        </div>
+
+    </div>
+</div>

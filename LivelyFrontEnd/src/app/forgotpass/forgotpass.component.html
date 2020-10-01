@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="forgotcard">
+
+        <div class="forgottitle">
+            Forgot Password
+        </div>
+        <div class="forgotfield">
+            <div class = "error" *ngIf = "error">
+                {{errormessage}}
+            </div>
+            <form [formGroup]="form" class="input">
+                <input placeholder="New Password" formControlName="NewPassword" type="password" class="ip" *ngIf="!password">
+                <div *ngIf="password" class="errormsg">
+                    <div class="message sb1">
+                        {{messagepassword}}
+                    </div>
+                    <input placeholder="Enter New Password" formControlName="NewPassword" type="password" class="ip iperror">
+                </div>
+                <input placeholder="Confirm Password" formControlName="ConfirmPassword" type="password" class="ip" *ngIf="!cpassword">
+                <div *ngIf="cpassword" class="errormsg">
+                    <div class="message sb1">
+                        {{messagecpassword}}
+                    </div>
+                    <input placeholder="Confirm Password" formControlName="ConfirmPassword" type="password" class="ip iperror">
+                </div>
+            </form>
+            <div class="submit" (click)="validate()">
+                <div class="submitbutton">
+                    Login
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

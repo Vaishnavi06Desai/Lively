@@ -1,0 +1,35 @@
+<div class="main">
+    <div class="emailcard">
+
+        <div class="emailtitle">
+            Enter Email
+        </div>
+        <div class="emailfield">
+            <div class = "error" *ngIf = "error">
+                {{errormessage}}
+            </div>
+            <div class = "error" *ngIf = "success" style = "border: green solid; background-color: rgb(0, 255, 0, 0.5);">
+                Email sent!
+            </div>
+            <form [formGroup]="form" class="input">
+                <input placeholder="Enter Email" formControlName="Email" type="email" class="ip" *ngIf="!email">
+                <div *ngIf="email" class="errormsg">
+                    <div class="message sb1">
+                        {{messageemail}}
+                    </div>
+                    <input placeholder="Enter Email" formControlName="Email" type="email" class="ip iperror">
+                </div>
+            </form>
+            <div class="submit" (click)="validate()">
+                <div class="submitbutton">
+                    Submit
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

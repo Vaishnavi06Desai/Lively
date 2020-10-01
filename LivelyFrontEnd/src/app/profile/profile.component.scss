@@ -1,0 +1,75 @@
+.main{
+    min-height: 94vh;
+    // background-image: url("../../assets/images/bg1.png");
+    // background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.profilecard{
+    //border: solid black;
+    height: 80vh;
+    width: 30vw;
+    //margin-left: 35%;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 3px  black;
+}
+.profiletitle{
+    // border: solid black;
+    padding: 5%;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 250%;
+    text-align: center;
+    flex-basis: 10%;
+
+}
+
+.profilefield{
+    // border: solid pink;
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    
+}
+.man{
+    text-align: center;
+}
+.input{
+    
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex-basis: 70%;
+    justify-content: space-evenly;
+}
+
+.ip{
+    
+    height: 15%;
+    width: 100%;
+    font-size: 150%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+@media (max-width: 1200px){
+
+    .main{
+        align-content: center;
+    }
+
+    .profilecard{
+        align-self: center;
+        width: 90vw;
+        height: 90vh;
+    }
+}
