@@ -11,11 +11,11 @@
 }
 
 .col1{
-    background-color: var(--color5t);
+    background-color: var(--color4d);
 }
 
 .col2{
-    background-color: var(--color3t);
+    background-color: var(--color4l);
 }
 
 .col1:hover{
@@ -28,19 +28,19 @@
 
 @keyframes col1{
     from{
-        background-color: var(--color5t);
+        background-color: var(--color4d);
     }
     to{
-        background-color: var(--color5);
+        background-color: var(--color4l);
     }
 }
 
 @keyframes col2{
     from{
-        background-color: var(--color3t);
+        background-color: var(--color4l);
     }
     to{
-        background-color: var(--color3);
+        background-color: var(--color4d);
     }
 }
 
