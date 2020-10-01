@@ -1,3 +1,51 @@
 .main{
     min-height: 94vh;
 }
+
+
+
+.logo-small {
+    color:var(--color3d) ;
+    font-size: 50px;
+  }
+
+  .jumbotron {
+    background:  none;
+    
+    //color: #fff;
+    padding: 100px 25px;
+    text-align: center;   
+
+    
+    //color: white;
+  }
+
+
+
+
+  
+  .container-fluid {
+    padding: 60px 50px;
+  }
+
+  .logo {
+    font-size: 200px;
+  }
+
+  .thumbnail {
+    padding: 0 0 15px 0;
+    //border: none;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+  
+  }
+
+
+
+
+  .thumbnail img {
+    width: 80%;
+    height: 80%;
+    margin-bottom: 10px;
+  }
