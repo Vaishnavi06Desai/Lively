@@ -7,6 +7,7 @@ import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { HomeComponent } from './home/home.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { InventoryrecordComponent } from './inventoryrecord/inventoryrecord.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'inventory',
     component: InventoryComponent
+  },
+  {
+    path: 'inventory/record',
+    component: InventoryrecordComponent
   },
   {
     path: '',

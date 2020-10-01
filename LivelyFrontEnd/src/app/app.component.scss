@@ -6,7 +6,7 @@
 }
   
 .nav-drawer{
-    background-image: linear-gradient(to bottom right, var(--vt1), var(--vt3));
+    background-image: linear-gradient(to bottom right, var(--color5), var(--color6));
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -80,7 +80,7 @@
 .content{
     justify-content: space-around;
     top: 39px;
-    background-image: url(../assets/images/bg.png);
+    background-image: url(../assets/images/logo.png);
     background-size: 100% 100%;
     //position: -webkit-sticky;
     //top: 39px;
@@ -89,7 +89,7 @@
 .nav-bar{
     width: 100vw;
     height: 6vh;
-    background-color: var(--vt3);
+    background-color: var(--color6);
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: flex;

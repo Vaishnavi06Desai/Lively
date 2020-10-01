@@ -27,6 +27,7 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { InventoryrecordComponent } from './inventoryrecord/inventoryrecord.component';
 
 //import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
 //import { ApiAiClient } from 'api-ai-javascript';
@@ -53,6 +54,7 @@ export class HammerConfig extends HammerGestureConfig {
     ConfirmemailComponent,
     AboutusComponent,
     InventoryComponent,
+    InventoryrecordComponent,
   ],
   imports: [
     BrowserModule,
