@@ -6,6 +6,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { HomeComponent } from './home/home.component';
+import { InventoryComponent } from './inventory/inventory.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'aboutus',
     component: AboutusComponent
+  },
+  {
+    path: 'inventory',
+    component: InventoryComponent
   },
   {
     path: '',
