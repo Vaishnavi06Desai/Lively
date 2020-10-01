@@ -29,6 +29,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { InventoryrecordComponent } from './inventoryrecord/inventoryrecord.component';
 
+import {MatSelectModule} from '@angular/material/select';
+
 //import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
 //import { ApiAiClient } from 'api-ai-javascript';
 
@@ -64,6 +66,7 @@ export class HammerConfig extends HammerGestureConfig {
     HammerModule,
 
     MatSidenavModule,
+    MatSelectModule,
 
     //ApiAiClient,
 

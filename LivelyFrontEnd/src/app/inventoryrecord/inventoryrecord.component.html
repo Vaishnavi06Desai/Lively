@@ -1,1 +1,90 @@
-<p>inventoryrecord works!</p>
+<div class="main">
+    <div class="formcard">
+        <form [formGroup]="form" class="input">
+            <input placeholder="Enter Animal ID / Coup Id / Set Id" formControlName="ID" type="text" class="ip">
+            <mat-form-field appearance="fill" class="ip">
+                <mat-label class="entrylabel">Select Farm</mat-label>
+                <mat-select [(value)]="farm" class="options">
+                    <div *ngFor="let type of farms">
+                        <mat-option value="{{type.payload.doc.id}}" class="options">
+                            {{type.payload.doc.id}}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="ip">
+                <mat-label class="entrylabel">Select Entry Type</mat-label>
+                <mat-select [(value)]="selected1" class="options">
+                    <mat-option value="birth" class="options">Enter Birth Date</mat-option>
+                    <mat-option value="buy" class="options">Enter Buying Date</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <input placeholder="Enter Birth Date" formControlName="Birth" type="text" class="ip"
+                *ngIf="selected1 == 'birth'">
+            <input placeholder="Enter Buying Date" formControlName="Buy" type="text" class="ip"
+                *ngIf="selected1 == 'buy'">
+
+            <!-- <mat-form-field appearance="fill" class="ip">
+                <mat-label class="entrylabel">Select Exit Type</mat-label>
+                <mat-select [(value)]="selected2" class="options">
+                    <mat-option value="death" class="options">Enter Death Date</mat-option>
+                    <mat-option value="sell" class="options">Enter Selling Date</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <input placeholder="Enter Death Date" formControlName="Death" type="text" class="ip"
+                *ngIf="selected2 == 'death'">
+            <input placeholder="Enter Selling Date" formControlName="Sell" type="text" class="ip"
+                *ngIf="selected2 == 'sell'"> -->
+            <mat-form-field appearance="fill" class="ip">
+                <mat-label class="entrylabel">Select Type</mat-label>
+                <mat-select [(value)]="type" class="options">
+                    <div *ngFor="let type of types" (click) = "submittype(type.payload.doc.id)">
+                        <mat-option value="{{type.payload.doc.data().Name}}" class="options">
+                            {{type.payload.doc.data().Name}}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="ip" *ngIf="type != null">
+                <mat-label class="entrylabel">Select Breed</mat-label>
+                <mat-select [(value)]="breed" class="options">
+                    <div *ngFor="let type of breeds" (click) = "submitbreed(type.payload.doc.id)">
+                        <mat-option value="{{type.payload.doc.data().Name}}" class="options">
+                            {{type.payload.doc.data().Name}}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="ip" *ngIf="breed != null">
+                <mat-label class="entrylabel">Select Sub Breed</mat-label>
+                <mat-select [(value)]="subbreed" class="options">
+                    <div *ngFor="let type of subbreeds" >
+                        <mat-option value="{{type.payload.doc.data().Name}}" class="options">
+                            {{type.payload.doc.data().Name}}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+            <input placeholder="Enter Age" formControlName="Age" type="text" class="ip">
+            <input placeholder="Enter Weight" formControlName="Weight" type="text" class="ip">
+            <input placeholder="Enter Place of Origin" formControlName="PlaceOfOrigin" type="text" class="ip">
+            <mat-form-field appearance="fill" class="ip">
+                <mat-label class="entrylabel">Select Health condition</mat-label>
+                <mat-select [(value)]="health" class="options">
+                    <mat-option value="healthy" class="options">
+                        Healthy</mat-option>
+                    <mat-option value="average" class="options">
+                        Average</mat-option>
+                    <mat-option value="bad" class="options">
+                        Bad</mat-option>
+                    <mat-option value="worse" class="options">
+                        Worse</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <input placeholder="Enter Quantity" formControlName="Quantity" type="number" class="ip">
+
+
+        </form>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div class="button" (click)="submit()">
+                Submit
+            </div>
+        </div>
+    </div>
+</div>

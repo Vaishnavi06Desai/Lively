@@ -11,11 +11,11 @@
 }
 
 .col1{
-    background-color: var(--color4d);
+    background-color: var(--color5d);
 }
 
 .col2{
-    background-color: var(--color4l);
+    background-color: var(--color5l);
 }
 
 .col1:hover{
@@ -28,24 +28,24 @@
 
 @keyframes col1{
     from{
-        background-color: var(--color4d);
+        background-color: var(--color5d);
     }
     to{
-        background-color: var(--color4l);
+        background-color: var(--color5l);
     }
 }
 
 @keyframes col2{
     from{
-        background-color: var(--color4l);
+        background-color: var(--color5l);
     }
     to{
-        background-color: var(--color4d);
+        background-color: var(--color5d);
     }
 }
 
 .button{
-    background-color: var(--color7);
+    background-color: var(--color2);
     width: fit-content;
     align-self: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
