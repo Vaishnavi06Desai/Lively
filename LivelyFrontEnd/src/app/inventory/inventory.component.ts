@@ -18,6 +18,10 @@ export class InventoryComponent implements OnInit {
   farm = null;
   livestock:any;
 
+  ipfarmname: Boolean = false;
+
+  farmname = "Farm Name"
+
   ngOnInit(): void {
     this.auth.getUserState()
     .subscribe(user => {
@@ -26,16 +30,48 @@ export class InventoryComponent implements OnInit {
     })
   }
 
+  form = new FormGroup(
+    {
+      Farm: new FormControl('')
+    }
+  )
   getfarms(){
     return this.db.collection('Users').doc(this.userID).collection('Farms').snapshotChanges().subscribe(res => {this.farms = res;});
    }
 
    getrecords(farm){
-     console.log("Hii")
+     this.farmname = farm;
+     this.farm = farm;
     return this.db.collection('Users').doc(this.userID).collection('Farms').doc(farm).collection('Livestock').snapshotChanges().subscribe(res => {this.livestock = res;});
    }
 
+   edit(record){
+    var myurl = `/inventory/newrecord?mode=edit&farm=${this.farm}&id=${record.payload.doc.id}`;
+    this.router.navigateByUrl(myurl);
+   }
+
    newrec(){
-     this.router.navigate(['/inventory/newrecord']);
+     //this.router.navigate(['/newrecord?mode=new']);
+     this.router.navigateByUrl('/inventory/newrecord?mode=new');
+   }
+
+   ipfarm(){
+    this.ipfarmname = true;
+   }
+
+   newfarm(){
+    this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.form.get('Farm').value).set({}).then(e => {this.ipfarmname = false});
+   }
+
+   deletefarm(id){
+    this.db.collection('Users').doc(this.userID).collection('Farms').doc(id).delete();
+   }
+
+   delete(record){
+    this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(record).delete();
+   }
+
+   newtype(){
+     this.router.navigate(['/inventory/newtype']);
    }
 }

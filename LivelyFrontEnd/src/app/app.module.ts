@@ -30,6 +30,9 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { InventoryrecordComponent } from './inventoryrecord/inventoryrecord.component';
 
 import {MatSelectModule} from '@angular/material/select';
+import { NewtypeComponent } from './newtype/newtype.component';
+import { FarmaffairsComponent } from './farmaffairs/farmaffairs.component';
+import { FarmperformaceindexComponent } from './farmperformaceindex/farmperformaceindex.component';
 
 
 //import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
@@ -58,6 +61,9 @@ export class HammerConfig extends HammerGestureConfig {
     AboutusComponent,
     InventoryComponent,
     InventoryrecordComponent,
+    NewtypeComponent,
+    FarmaffairsComponent,
+    FarmperformaceindexComponent,
   ],
   imports: [
     BrowserModule,

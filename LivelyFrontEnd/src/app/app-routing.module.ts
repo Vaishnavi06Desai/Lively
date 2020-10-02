@@ -4,10 +4,13 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
+import { FarmaffairsComponent } from './farmaffairs/farmaffairs.component';
+import { FarmperformaceindexComponent } from './farmperformaceindex/farmperformaceindex.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { HomeComponent } from './home/home.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { InventoryrecordComponent } from './inventoryrecord/inventoryrecord.component';
+import { NewtypeComponent } from './newtype/newtype.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -47,6 +50,18 @@ const routes: Routes = [
   {
     path: 'inventory/newrecord',
     component: InventoryrecordComponent
+  },
+  {
+    path: 'inventory/newtype',
+    component: NewtypeComponent
+  },
+  {
+    path: 'farmaffairs',
+    component: FarmaffairsComponent
+  },
+  {
+    path: 'farmaffairs/fpi',
+    component: FarmperformaceindexComponent
   },
   {
     path: '',

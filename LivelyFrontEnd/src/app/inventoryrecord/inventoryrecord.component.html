@@ -22,18 +22,7 @@
                 *ngIf="selected1 == 'birth'">
             <input placeholder="Enter Buying Date" formControlName="Buy" type="text" class="ip"
                 *ngIf="selected1 == 'buy'">
-
-            <!-- <mat-form-field appearance="fill" class="ip">
-                <mat-label class="entrylabel">Select Exit Type</mat-label>
-                <mat-select [(value)]="selected2" class="options">
-                    <mat-option value="death" class="options">Enter Death Date</mat-option>
-                    <mat-option value="sell" class="options">Enter Selling Date</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <input placeholder="Enter Death Date" formControlName="Death" type="text" class="ip"
-                *ngIf="selected2 == 'death'">
-            <input placeholder="Enter Selling Date" formControlName="Sell" type="text" class="ip"
-                *ngIf="selected2 == 'sell'"> -->
+                
             <mat-form-field appearance="fill" class="ip">
                 <mat-label class="entrylabel">Select Type</mat-label>
                 <mat-select [(value)]="type" class="options">

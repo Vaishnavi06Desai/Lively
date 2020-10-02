@@ -1,6 +1,100 @@
 <div class="main">
-    <div class="create">
-        <div class="button" (click) = "newrec()">
+    <div class="title">
+
+    </div>
+    <div class="newfrm">
+        <div class="button b1" (click)="ipfarm()">
+            New Farm
+        </div>
+        <form [formGroup]="form" class="farminput" *ngIf="ipfarmname">
+            <input placeholder="Enter Farm name" formControlName="Farm" type="text" class="ip">
+            <div class="button b1" (click)="newfarm()">
+                Submit
+            </div>
+        </form>
+    </div>
+    <div class="frmbtns">
+        <div *ngFor="let farm of farms" style="display: flex; margin: 10px 10px;">
+            <div class="button b2" (click)="getrecords(farm.payload.doc.id)">
+                {{farm.payload.doc.id}}
+                
+            </div>
+            <div class="icon i1" style="color: red;" (click)="deletefarm(farm.payload.doc.id)"> &#10008;</div>
+        </div>
+    </div>
+    <div class="records">
+        <div class="nameandbord">
+            <div class="topleftbord">
+
+            </div>
+            <div class="farmname">
+                {{farmname}}
+            </div>
+            <div class="toprightbord">
+
+            </div>
+        </div>
+        <div class="rowcontent">
+            <div class="leftbord"></div>
+            <div class="rows">
+                <div class="row" *ngFor="let record of livestock">
+                    <div class="record">
+                        <div class="rec">
+                            <B>ID:</B> {{record.payload.doc.data().ID}}
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().Birth != 'None'">
+                            <B>Birth Date:</B> {{record.payload.doc.data().Birth}}
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().Buy != 'None'">
+                            <B>Buying Date:</B> {{record.payload.doc.data().Buy}}
+                        </div>
+                        <div class="rec">
+                            <B>Type:</B> {{record.payload.doc.data().Type}}
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().Breed != null">
+                            <B>Breed:</B> {{record.payload.doc.data().Breed}}
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().SubBreed != null">
+                            <B>Sub Breed:</B> {{record.payload.doc.data().SubBreed}}
+                        </div>
+                        <div class="rec">
+                            <B>Age:</B> {{record.payload.doc.data().Age}}
+                        </div>
+                        <div class="rec">
+                            <B>Weight:</B> {{record.payload.doc.data().Weight}}
+                        </div>
+                        <div class="rec">
+                            <B>Place Of Origin:</B> {{record.payload.doc.data().PlaceOfOrigin}}
+                        </div>
+                        <div class="rec">
+                            <B>Health Condition:</B> {{record.payload.doc.data().HealthCondition}}
+                        </div>
+                        <div class="rec">
+                            <B>Quantity:</B> {{record.payload.doc.data().Quantity}}
+                        </div>
+                    </div>
+                    <div class="modify">
+                        <div class="rec icon" style="color: blue;" (click)="edit(record)"> &#9998;</div>
+                        <div class="rec icon" style="color: red;" (click)="delete(record)"> &#10008;</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="rightbord"></div>
+
+        </div>
+        <div class="bottombord"></div>
+    </div>
+    <div class="newbtns">
+        <div class="button b1" (click)="newrec()">
+            New Record
+        </div>
+        <div class="button b1" (click)="newtype()">
+            New Type
+        </div>
+    </div>
+    <!-- <div class="create">
+        <div class="button" (click)="newrec()">
             Create a new record
         </div>
     </div>
@@ -14,19 +108,19 @@
             <div class="rec">
                 <B>ID:</B> {{record.payload.doc.data().ID}}
             </div>
-            <div class="rec" *ngIf = "record.payload.doc.data().Birth != 'None'">
+            <div class="rec" *ngIf="record.payload.doc.data().Birth != 'None'">
                 <B>Birth Date:</B> {{record.payload.doc.data().Birth}}
             </div>
-            <div class="rec" *ngIf = "record.payload.doc.data().Buy != 'None'">
+            <div class="rec" *ngIf="record.payload.doc.data().Buy != 'None'">
                 <B>Buying Date:</B> {{record.payload.doc.data().Buy}}
             </div>
             <div class="rec">
                 <B>Type:</B> {{record.payload.doc.data().Type}}
             </div>
-            <div class="rec" *ngIf = "record.payload.doc.data().Breed != null">
+            <div class="rec" *ngIf="record.payload.doc.data().Breed != null">
                 <B>Breed:</B> {{record.payload.doc.data().Breed}}
             </div>
-            <div class="rec" *ngIf = "record.payload.doc.data().SubBreed != null">
+            <div class="rec" *ngIf="record.payload.doc.data().SubBreed != null">
                 <B>Sub Breed:</B> {{record.payload.doc.data().SubBreed}}
             </div>
             <div class="rec">
@@ -39,10 +133,13 @@
                 <B>Place Of Origin:</B> {{record.payload.doc.data().PlaceOfOrigin}}
             </div>
             <div class="rec">
+                <B>Health Condition:</B> {{record.payload.doc.data().HealthCondition}}
+            </div>
+            <div class="rec">
                 <B>Quantity:</B> {{record.payload.doc.data().Quantity}}
             </div>
-            <div class="rec" (click)="edit(order)"> &#9998;</div>
+            <div class="rec" (click)="edit(record)"> &#9998;</div>
             <div class="rec" (click)="delete(order)"> &#10008;</div>
         </div>
-    </div>
+    </div> -->
 </div>

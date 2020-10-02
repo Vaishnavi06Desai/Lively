@@ -1,41 +1,116 @@
 .main{
     min-height: 94vh;
-    background-color: var(--color5d);
+    max-height: 94vh;
+    //background-color: var(--color5d);
     display: flex;
     flex-direction: column;
     //justify-content: space-evenly;
-    padding: 5%;
+    //padding: 5%;
+    //border: solid black;
 }
 
-.create{
+.title{
+    height:calc(10vh - 39px);
+}
+
+.newfrm{
+    height:6vh;
+    display: flex;
+    //flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.frmbtns{
     height: 10vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
-.farmnames{
-    height: fit-content;
-    display: flex;
     flex-wrap: wrap;
-    margin:5%;
-
+    justify-content: space-evenly;
+    min-height: min-content;
+    overflow: auto;
 }
 
-.farm{
-    background-color: var(--color2);
-    width: fit-content;
+.newbtns{
+    height:8vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nameandbord{
+    height: 2vh;
+    display: flex;
+}
+
+.topleftbord{
+    width: 5%;
+    border-top: solid black;
+    border-left: solid black;
+    border-top-left-radius: 5px;
+}
+
+.farmname{
+    width: 10%;
+    text-align: center;
+    margin-top: -1vh;
+    font-size: 130%;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 150%;
-    height: fit-content;
-    padding: 2% 5%;
-    cursor: pointer;
-    border-radius: 10px;
-    border: black thin solid;
-    box-shadow: black 5px 3px 2px;
+}
+
+.toprightbord{
+    //flex-basis: 85%;
+    width: 100%;
+    border-top: solid black;
+    border-right: solid black;
+    border-top-right-radius: 5px;
+}
+
+.rowcontent{
+    display: flex;
+    justify-content: space-evenly;
+    height: 56vh;
+}
+
+.row{
+    display: flex;
+    //flex-direction: column;
+    width: 100%;
     align-self: center;
-        color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-top: solid black thin;
+    border-bottom: solid black thin;
+    margin: 5px 0;
+    padding: 1%;
+    font-size: 130%; 
+}
+
+.row:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.leftbord{
+    width:5%;
+    border-left: black solid;
+    //border-radius: 5px;
+}
+
+.rightbord{
+    width:5%;
+    border-right: black solid;
+    //border-radius: 5px;
+}
+.bottombord{
+    height: 2vh;
+    border: black solid;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.rows{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    //background-color: rgb(216, 216, 216);
 }
 
 .button{
@@ -44,7 +119,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 150%;
     height: fit-content;
-    padding: 2% 5%;
+    //padding: 2% 5%;
     cursor: pointer;
     border-radius: 10px;
     border: black thin solid;
@@ -53,27 +128,77 @@
     color: white;
 }
 
-.records{
-    background-color: rgb(216, 216, 216);
+.b1{
+    height: 5vh;
+    padding: 0% 5%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+}
+
+.b2{
+    height: 5vh;
+    padding: 0% 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1% 1%;
+    text-align: center;
+}
+
+.records{
+    width: 90vw;
+    align-self: center;
+    min-height: 60vh;
+    max-height:60vh;
+    display: flex;
+    flex-direction: column; 
+    //justify-content: flex-start;
+    //min-height: min-content;
+    //overflow: auto;
 }
 
 .record{
-    background-color: rgb(216, 216, 216);
-    padding: 1%;
-    font-size: 130%;
-    border-top: solid black thin;
-    border-bottom: solid black thin;
-    margin: 5px 0;
     display: flex;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     justify-content: space-evenly;
-     flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-basis: 90%;
 }
 
 .rec{
     width: fit-content;
-    margin: 0 20px;
+    //margin: 0 20px;
+}
+
+.modify{
+    width: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon{
+    cursor: pointer;
+    border: solid black thin;
+    box-shadow: 2px 2px 5px black;
+    padding: 1%;
+}
+
+.icon:hover{
+    background-color: rgb(236, 236, 236);
+    box-shadow: none;
+}
+
+.farminput{
+    width: 20%;
+    display: flex;
+}
+
+.ip{
+    width: 80%;
+    margin-right: 5px;
+}
+
+.i1{
+    height: fit-content;
+
 }
