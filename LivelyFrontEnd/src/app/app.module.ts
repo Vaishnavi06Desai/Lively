@@ -14,6 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ChartsModule } from 'ng2-charts';
 //import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { HomeComponent } from './home/home.component';
@@ -36,7 +37,6 @@ import { FarmperformaceindexComponent } from './farmperformaceindex/farmperforma
 import { AnimalwelfareComponent } from './animalwelfare/animalwelfare.component';
 import { HealthsystemComponent } from './healthsystem/healthsystem.component';
 import { HealthformComponent } from './healthform/healthform.component';
-
 
 //import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
 //import { ApiAiClient } from 'api-ai-javascript';
@@ -75,6 +75,8 @@ export class HammerConfig extends HammerGestureConfig {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    
+    ChartsModule,
 
     HammerModule,
 

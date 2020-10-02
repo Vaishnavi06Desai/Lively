@@ -1,4 +1,4 @@
-<form [formGroup]="files" class="inputf">
+<!-- <form [formGroup]="files" class="inputf">
     <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
             (change)="cus($event.target.files)" class="if"></div>
 </form>
@@ -14,9 +14,9 @@
     <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
             (change)="pcs($event.target.files)" class="if"></div>
 </form>
-<div class = "button" (click) = "upload()">Upload</div>   
+<div class = "button" (click) = "upload()">Upload</div>    -->
 
-<div class = "main">
+<div class="main">
     <div class="formcard">
         <form [formGroup]="form" class="input">
             <mat-form-field appearance="fill" class="ip">
@@ -32,7 +32,19 @@
                         Worse</mat-option>
                 </mat-select>
             </mat-form-field>
-            <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
+            <input type="file" id="file" (change)="cus($event.target.files)"
+                class="ip">
+            <input type="file" id="file" (change)="mr($event.target.files)"
+                class="ip">
+                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
+            <input type="file" id="file" (change)="vs($event.target.files)"
+                class="ip">
+                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
+                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
+                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
+            <input type="file" id="file" (change)="pcs($event.target.files)"
+                class="ip">
+                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
             <!-- <input placeholder="Enter Animal ID / Coup Id / Set Id" formControlName="ID" type="text" class="ip">
             <mat-form-field appearance="fill" class="ip">
                 <mat-label class="entrylabel">Select Farm</mat-label>
@@ -110,10 +122,9 @@
 
         </form>
         <div style="display: flex; justify-content: center; width: 100%;">
-            <div class="button" (click)="submit()">
+            <div class="button" (click)="upload()">
                 Submit
             </div>
         </div>
     </div>
 </div>
-
