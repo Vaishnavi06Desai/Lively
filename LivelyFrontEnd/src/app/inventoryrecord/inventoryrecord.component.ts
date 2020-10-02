@@ -77,7 +77,7 @@ export class InventoryrecordComponent implements OnInit {
     this.form.get('Breed').setValue(this.breed);
     this.form.get('SubBreed').setValue(this.subbreed);
     this.form.get('HealthCondition').setValue(this.health);
-    return this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').add(this.form.value);
+    return this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').add(this.form.value).then( e => {this.router.navigate(['/inventory']);});
   }
 
   getfarms() {

@@ -15,11 +15,13 @@ export class NewtypeComponent implements OnInit {
 
   types: any;
   breeds: any;
-  subbreeds:any;
+  breedid:any;
 
   type = null;
   breed = null;
   subbreed = null;
+
+  typeid: any;
 
   isbreed: boolean = false;
   issubreed:boolean = false;
@@ -61,28 +63,33 @@ export class NewtypeComponent implements OnInit {
     this.isnewbreed = true;
   }
 
-  subbmitbreed(){
+  submitbreed(){
     this.isnewbreed = false;
+    return this.db.collection('Users').doc(this.userID).collection('Types').doc(this.typeid).collection('Breed').add({"Name": this.formtype.get('breed').value})
   }
 
-  isnewsubbreedfunc(){
+  // isnewsubbreedfunc(){
+  //   this.isnewsubbreed = true;
+  // }
+
+  submitsubbreed(){
+    return this.db.collection('Users').doc(this.userID).collection('Types').doc(this.typeid).collection('Breed').doc(this.breedid).collection('SubBreed').add({"Name": this.formtype.get('subbreed').value})
+  }
+
+  enternewbreed(docid){
+    this.typeid = docid;
+    return this.db.collection('Users').doc(this.userID).collection('Types').doc(docid).collection('Breed').snapshotChanges().subscribe(res => { this.breeds = res; console.log(res[0].payload.doc.data()) });
+  }
+
+  enternewsubbreed(docid){
     this.isnewsubbreed = true;
-  }
-
-  subbmitsubbreed(){
-    this.isnewsubbreed = false;
-  }
-
-  enternewbreed(){
-
-  }
-
-  enternewsubbreed(){
-
+    this.breedid = docid;
+    console.log("Hii");
+    //return this.db.collection('Users').doc(this.userID).collection('Types').doc(this.typeid).collection('Breed').doc(docid).collection('SubBreed').snapshotChanges().subscribe(res => { this.subbreeds = res; console.log(res[0].payload.doc.data()) });
   }
 
   submit(){
-
+    this.router.navigate(['/inventory']);
   }
 
 }

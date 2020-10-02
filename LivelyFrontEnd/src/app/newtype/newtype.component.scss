@@ -14,7 +14,7 @@
 
 .type{
     flex-basis: 10%;
-    background-color: aqua;
+    //background-color: aqua;
     display: flex;
 }
 
@@ -27,7 +27,7 @@
 
 .class2{
     flex-basis: 90%;
-    background-color: aquamarine;
+    //background-color: aquamarine;
     display: flex;
     justify-content: space-between;
 }
@@ -39,13 +39,13 @@
 
 .class3{
     flex-basis: 90%;
-    background-color: bisque;
+    //background-color: bisque;
     display: flex;
     flex-direction: column;
 }
 
 .enter{
-    background-color: violet;
+    //background-color: violet;
     flex-basis: 20%;
     display: flex;
     justify-content: space-evenly;
@@ -64,7 +64,7 @@
 
 .class5{
     flex-basis: 90%;
-    background-color: pink;
+    //background-color: pink;
 }
 
 .ip{
@@ -78,7 +78,7 @@
 }
 
 .buttons{
-    background-color: blueviolet;
+    //background-color: blueviolet;
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
@@ -86,7 +86,7 @@
 }
 
 .button{
-    background-color: var(--color5d);
+    background-color: var(--color2);
     width: fit-content;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 150%;
@@ -97,6 +97,7 @@
     border: black thin solid;
     box-shadow: black 5px 3px 2px;
     align-self: center;
+    color: white;
 }
 
 .ipf{

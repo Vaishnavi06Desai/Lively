@@ -15,7 +15,7 @@
                         <mat-form-field appearance="fill" class="ip">
                             <mat-label class="entrylabel">Select Type</mat-label>
                             <mat-select [(value)]="type" class="options">
-                                <div *ngFor="let type of types" (click) = "submittype(type.payload.doc.id)">
+                                <div *ngFor="let type of types" (click) = "enternewbreed(type.payload.doc.id)">
                                     <mat-option value="{{type.payload.doc.data().Name}}" class="options">
                                         {{type.payload.doc.data().Name}}</mat-option>
                                 </div>
@@ -44,8 +44,27 @@
                                 
                             </div>
                             <div class = "class3">
-                                <div class = "enter">
-                                    
+                                <div class = "enter" *ngIf = "type != null">
+                                    <mat-form-field appearance="fill" class="ip">
+                                        <mat-label class="entrylabel">Select Breed</mat-label>
+                                        <mat-select [(value)]="breed" class="options">
+                                            <div *ngFor="let type of breeds" (click) = "enternewsubbreed(type.payload.doc.id)">
+                                                <mat-option value="{{type.payload.doc.data().Name}}" class="options">
+                                                    {{type.payload.doc.data().Name}}</mat-option>
+                                            </div>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <div class = "buttons">
+                                        <div class = "button" (click) = "isnewbreedfunc()" *ngIf = "!isnewbreed">
+                                            Create New Breed
+                                        </div>
+                                        <div *ngIf = "isnewbreed" class = "buttons">
+                                            <input placeholder="Enter Breed" formControlName="breed" type="text" class="ipf">
+                                            <div class = "button" (click) = "submitbreed()" >
+                                                Create New Breed
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class = "class4">
                                     <div class = "type">
@@ -57,8 +76,15 @@
                                         <div class = "line" style = "flex-basis: 10%;">
 
                                         </div>
-                                        <div class = "enter" style = "flex-basis: 100%;">
-
+                                        <div class = "enter" style = "flex-basis: 100%;"  *ngIf = "isnewsubbreed">
+                                            <div class = "buttons">
+                                                <div class = "buttons">
+                                                    <input placeholder="Enter Sub Breed" formControlName="subbreed" type="text" class="ipf">
+                                                    <div class = "button" (click) = "submitsubbreed()" >
+                                                        Create New Sub Breed
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     
@@ -67,6 +93,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class = "button" (click) = "submit()">
+                Done
             </div>
         </div>
     </form>
