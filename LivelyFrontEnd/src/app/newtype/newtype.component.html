@@ -1,0 +1,73 @@
+<div class = "main">
+    <form [formGroup]="formtype" style="width: 100%; display: flex; justify-content: center;">
+        <div class = "class1">
+            <div class = "type">
+                <div class = "title">
+                    <div style = "height: 100%; display: flex; flex-direction: column; justify-content: center;">Type</div>
+                </div>
+            </div>
+            <div class = "class2">
+                <div class = "line">
+
+                </div>
+                <div class = "class3">
+                    <div class = "enter">
+                        <mat-form-field appearance="fill" class="ip">
+                            <mat-label class="entrylabel">Select Type</mat-label>
+                            <mat-select [(value)]="type" class="options">
+                                <div *ngFor="let type of types" (click) = "submittype(type.payload.doc.id)">
+                                    <mat-option value="{{type.payload.doc.data().Name}}" class="options">
+                                        {{type.payload.doc.data().Name}}</mat-option>
+                                </div>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class = "buttons">
+                            <div class = "button" (click) = "isnewtypefunc()" *ngIf = "!isnewtype">
+                                Create New Type
+                            </div>
+                            <div *ngIf = "isnewtype" class = "buttons">
+                                <input placeholder="Enter Type" formControlName="type" type="text" class="ipf">
+                                <div class = "button" (click) = "submittype()" >
+                                    Create New Type
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "class4">
+                        <div class = "type">
+                            <div class = "title">
+                                <div style = "height: 100%; display: flex; flex-direction: column; justify-content: center;">Breed</div>
+                            </div>
+                        </div>
+                        <div class = "class2">
+                            <div class = "line">
+                                
+                            </div>
+                            <div class = "class3">
+                                <div class = "enter">
+                                    
+                                </div>
+                                <div class = "class4">
+                                    <div class = "type">
+                                        <div class = "title" style = "flex-basis: 20%;">
+                                            <div style = "height: 100%; display: flex; flex-direction: column; justify-content: center;">Sub Breed</div>
+                                        </div>
+                                    </div>
+                                    <div class = "class2">
+                                        <div class = "line" style = "flex-basis: 10%;">
+
+                                        </div>
+                                        <div class = "enter" style = "flex-basis: 100%;">
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

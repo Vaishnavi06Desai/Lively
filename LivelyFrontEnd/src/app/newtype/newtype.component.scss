@@ -1,0 +1,106 @@
+.main{
+    min-height: calc(94vh - 39px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.class1{
+    height: 85vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.type{
+    flex-basis: 10%;
+    background-color: aqua;
+    display: flex;
+}
+
+.title{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    flex-basis: 10%;
+    font-size: 200%;
+}
+
+.class2{
+    flex-basis: 90%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+}
+
+.line{
+    flex-basis: 5%;
+    border-right: solid black;
+}
+
+.class3{
+    flex-basis: 90%;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+}
+
+.enter{
+    background-color: violet;
+    flex-basis: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.class4{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.breed{
+    flex-basis: 10%;
+    display: flex;
+}
+
+.class5{
+    flex-basis: 90%;
+    background-color: pink;
+}
+
+.ip{
+    flex-basis: 40%;
+    align-self: center;
+    background-color: white;
+    padding: 0.5%;
+    font-size: 100%;
+    color: black;
+    font-weight: bolder;
+}
+
+.buttons{
+    background-color: blueviolet;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button{
+    background-color: var(--color5d);
+    width: fit-content;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 150%;
+    height: fit-content;
+    padding: 2% 5%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: black thin solid;
+    box-shadow: black 5px 3px 2px;
+    align-self: center;
+}
+
+.ipf{
+    display: flex;
+    flex-basis: 30%;
+    margin: 2% 2%;
+}
