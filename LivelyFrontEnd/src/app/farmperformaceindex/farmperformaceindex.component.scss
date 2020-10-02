@@ -1,0 +1,26 @@
+
+/* Make sure that padding behaves as expected */
+* {box-sizing:border-box}
+
+/* Container for skill bars */
+.container {
+  width: 100%; /* Full width */
+  background-color: #ddd; /* Grey background */
+}
+
+.skills {
+  text-align: right; /* Right-align text */
+  padding-top: 1px; /* Add top padding */
+  padding-bottom: 1px; /* Add bottom padding */
+  color: white; /* White text color */
+}
+
+.poultry-m {width: 90%; background-color: #4CAF50;} /* Green */
+.cattle-m {width: 60%; background-color: #2196F3;} /* Blue */
+.pigs-m {width: 55%; background-color: #f44336;} /* Red */
+.goats-m {width: 70%; background-color: #808080;} /* Dark Grey */
+
+.poultry-f {width: 70%; background-color: #44ccaa;} /* Green */
+.cattle-f {width: 80%; background-color: #219;} /* Blue */
+.pigs-f {width: 65%; background-color: #ff449b;} /* Red */
+.goats-f {width: 50%; background-color: #3a3337;} /* Dark Grey */

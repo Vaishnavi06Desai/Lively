@@ -1,1 +1,108 @@
-<p>farmperformaceindex works!</p>
+<div class="col-sm-12">
+
+    <div class="well">
+        <h1>Division Based on Type</h1>
+        
+        <b><p>Poultry</p></b>     
+        <div class="container">
+        <div class="skills poultry-m">Male</div>
+        <div class="skills poultry-f">Female</div>
+        </div>
+
+        <b><p>Cattle</p></b>
+        <div class="container">
+        <div class="skills cattle-m">Male</div>
+        <div class="skills cattle-f">Female</div>
+        </div>
+
+        <b><p>Pigs</p></b>
+        <div class="container">
+        <div class="skills pigs-m">Male</div>
+        <div class="skills pigs-f">Female</div>
+        </div>
+
+        <b><p>Goats</p></b>
+        <div class="container">
+        <div class="skills goats-m">Male</div>
+        <div class="skills goats-f">Female</div>
+        </div>
+
+      <!-- <h4>Dashboard</h4>
+      <p>Some text..</p> -->
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <b><p>Health Status of Poultry</p></b>
+            <div style="display: block">
+                <canvas baseChart
+                            [data]="doughnutChartData_p"
+                            [labels]="doughnutChartLabels_p"
+                            [chartType]="doughnutChartType_p"></canvas>
+              </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <b><p>Health Status of Cattle</p></b>
+            <div style="display: block">
+                <canvas baseChart
+                            [data]="doughnutChartData_c"
+                            [labels]="doughnutChartLabels_c"
+                            [chartType]="doughnutChartType_c"></canvas>
+              </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <b><p>Health Status of Pigs</p></b>
+            <div style="display: block">
+                <canvas baseChart
+                            [data]="doughnutChartData_pi"
+                            [labels]="doughnutChartLabels_pi"
+                            [chartType]="doughnutChartType_pi"></canvas>
+              </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <b><p>Health Status of Goat</p></b>
+            <div style="display: block">
+                <canvas baseChart
+                            [data]="doughnutChartData_g"
+                            [labels]="doughnutChartLabels_g"
+                            [chartType]="doughnutChartType_g"></canvas>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="well">
+          <b><p>Number of Animals</p></b>
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="radarChartData"
+                    [labels]="radarChartLabels"
+                    [chartType]="radarChartType"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="well">
+          <b><p>Age Wise Distribution</p></b>
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas>
+          </div> 
+        </div>
+      </div>
+     
+    </div>
+   
+</div>
