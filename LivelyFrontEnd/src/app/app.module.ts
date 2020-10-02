@@ -33,6 +33,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { NewtypeComponent } from './newtype/newtype.component';
 import { FarmaffairsComponent } from './farmaffairs/farmaffairs.component';
 import { FarmperformaceindexComponent } from './farmperformaceindex/farmperformaceindex.component';
+import { AnimalwelfareComponent } from './animalwelfare/animalwelfare.component';
+import { HealthsystemComponent } from './healthsystem/healthsystem.component';
+import { HealthformComponent } from './healthform/healthform.component';
 
 
 //import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
@@ -64,6 +67,9 @@ export class HammerConfig extends HammerGestureConfig {
     NewtypeComponent,
     FarmaffairsComponent,
     FarmperformaceindexComponent,
+    AnimalwelfareComponent,
+    HealthsystemComponent,
+    HealthformComponent,
   ],
   imports: [
     BrowserModule,

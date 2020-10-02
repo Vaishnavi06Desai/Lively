@@ -68,7 +68,7 @@ export class InventoryComponent implements OnInit {
    }
 
    delete(record){
-    this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(record).delete();
+    this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(record.payload.doc.id).delete().then().catch(e => {console.log(e)});
    }
 
    newtype(){

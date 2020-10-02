@@ -18,6 +18,7 @@ export class InventoryrecordComponent implements OnInit {
   breed = null;
   subbreed = null;
   health = "healthy";
+  gender = "female";
   farm = null;
 
   farms: any;
@@ -52,8 +53,7 @@ export class InventoryrecordComponent implements OnInit {
     ID: new FormControl(''),
     Birth: new FormControl('None'),
     Buy: new FormControl('None'),
-    // Death: new FormControl(''),
-    // Sell: new FormControl(''),
+    Gender: new FormControl(''),
     Age: new FormControl(''),
     Weight: new FormControl(''),
     PlaceOfOrigin: new FormControl(''),
@@ -64,10 +64,6 @@ export class InventoryrecordComponent implements OnInit {
     Quantity: new FormControl(1),
   })
 
-  form2 = new FormGroup({
-    Entry: new FormControl(''),
-    Exit: new FormControl(''),
-  })
 
   submit() {
     if(this.mode == "edit"){
@@ -77,6 +73,7 @@ export class InventoryrecordComponent implements OnInit {
     this.form.get('Breed').setValue(this.breed);
     this.form.get('SubBreed').setValue(this.subbreed);
     this.form.get('HealthCondition').setValue(this.health);
+    this.form.get('Gender').setValue(this.gender);
     return this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').add(this.form.value).then( e => {this.router.navigate(['/inventory']);});
   }
 
@@ -133,6 +130,8 @@ export class InventoryrecordComponent implements OnInit {
       this.form.get('Weight').setValue(this.editform.payload.data().Weight);
       this.form.get('PlaceOfOrigin').setValue(this.editform.payload.data().PlaceOfOrigin);
       this.form.get('Quantity').setValue(this.editform.payload.data().Quantity);
+      this.gender = this.editform.payload.data().Gender;
+      this.form.get('Gender').setValue(this.editform.payload.data().Gender);
       this.health = this.editform.payload.data().HealthCondition;
       this.form.get('HealthCondition').setValue(this.editform.payload.data().HealthCondition);
     });

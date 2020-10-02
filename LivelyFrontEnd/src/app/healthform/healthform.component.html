@@ -1,7 +1,39 @@
-<div class="main">
+<form [formGroup]="files" class="inputf">
+    <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
+            (change)="cus($event.target.files)" class="if"></div>
+</form>
+<form [formGroup]="files" class="inputf">
+    <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
+            (change)="mr($event.target.files)" class="if"></div>   
+</form>
+<form [formGroup]="files" class="inputf">
+    <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
+            (change)="vs($event.target.files)" class="if"></div>  
+</form>
+<form [formGroup]="files" class="inputf">
+    <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
+            (change)="pcs($event.target.files)" class="if"></div>
+</form>
+<div class = "button" (click) = "upload()">Upload</div>   
+
+<div class = "main">
     <div class="formcard">
         <form [formGroup]="form" class="input">
-            <input placeholder="Enter Animal ID / Coup Id / Set Id" formControlName="ID" type="text" class="ip">
+            <mat-form-field appearance="fill" class="ip">
+                <mat-label class="entrylabel">Select Health condition</mat-label>
+                <mat-select [(value)]="health" class="options">
+                    <mat-option value="healthy" class="options">
+                        Healthy</mat-option>
+                    <mat-option value="average" class="options">
+                        Average</mat-option>
+                    <mat-option value="bad" class="options">
+                        Bad</mat-option>
+                    <mat-option value="worse" class="options">
+                        Worse</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
+            <!-- <input placeholder="Enter Animal ID / Coup Id / Set Id" formControlName="ID" type="text" class="ip">
             <mat-form-field appearance="fill" class="ip">
                 <mat-label class="entrylabel">Select Farm</mat-label>
                 <mat-select [(value)]="farm" class="options">
@@ -73,7 +105,7 @@
                         Worse</mat-option>
                 </mat-select>
             </mat-form-field>
-            <input placeholder="Enter Quantity" formControlName="Quantity" type="number" class="ip">
+            <input placeholder="Enter Quantity" formControlName="Quantity" type="number" class="ip"> -->
 
 
         </form>
@@ -84,3 +116,4 @@
         </div>
     </div>
 </div>
+

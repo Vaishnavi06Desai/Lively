@@ -1,25 +1,13 @@
 <div class="main">
     <div class="title">
-
-    </div>
-    <div class="newfrm">
-        <div class="button b1" (click)="ipfarm()">
-            New Farm
-        </div>
-        <form [formGroup]="form" class="farminput" *ngIf="ipfarmname">
-            <input placeholder="Enter Farm name" formControlName="Farm" type="text" class="ip">
-            <div class="button b1" (click)="newfarm()">
-                Submit
-            </div>
-        </form>
+        Health System
     </div>
     <div class="frmbtns">
         <div *ngFor="let farm of farms" style="display: flex; margin: 10px 10px;">
             <div class="button b2" (click)="getrecords(farm.payload.doc.id)">
                 {{farm.payload.doc.id}}
-                
+
             </div>
-            <div class="icon i1" style="color: red;" (click)="deletefarm(farm.payload.doc.id)"> &#10008;</div>
         </div>
     </div>
     <div class="records">
@@ -77,8 +65,7 @@
                         </div>
                     </div>
                     <div class="modify">
-                        <div class="rec icon" style="color: blue;" (click)="edit(record)"> &#9998;</div>
-                        <div class="rec icon" style="color: red;" (click)="delete(record)"> &#10008;</div>
+                        <div class="rec icon" style="color: blue;" (click)="update(record)"> Update Health Record</div>
                     </div>
                 </div>
 
@@ -87,13 +74,5 @@
 
         </div>
         <div class="bottombord"></div>
-    </div>
-    <div class="newbtns">
-        <div class="button b1" (click)="newrec()">
-            New Record
-        </div>
-        <div class="button b1" (click)="newtype()">
-            New Type
-        </div>
     </div>
 </div>

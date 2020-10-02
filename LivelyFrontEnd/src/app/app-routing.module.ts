@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AnimalwelfareComponent } from './animalwelfare/animalwelfare.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { FarmaffairsComponent } from './farmaffairs/farmaffairs.component';
 import { FarmperformaceindexComponent } from './farmperformaceindex/farmperformaceindex.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { HealthformComponent } from './healthform/healthform.component';
+import { HealthsystemComponent } from './healthsystem/healthsystem.component';
 import { HomeComponent } from './home/home.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { InventoryrecordComponent } from './inventoryrecord/inventoryrecord.component';
@@ -62,6 +65,18 @@ const routes: Routes = [
   {
     path: 'farmaffairs/fpi',
     component: FarmperformaceindexComponent
+  },
+  {
+    path: 'animalwelfare',
+    component: AnimalwelfareComponent
+  },
+  {
+    path: 'animalwelfare/healthsystem',
+    component: HealthsystemComponent
+  },
+  {
+    path: 'animalwelfare/healthrecord',
+    component: HealthformComponent
   },
   {
     path: '',

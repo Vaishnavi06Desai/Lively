@@ -1,0 +1,54 @@
+.main{
+    min-height: 94vh;
+    //background-color: var(--color5d);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5%;
+}
+
+.formcard{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(121, 121, 121);
+    align-self: center;
+    width: 50vw;
+    height: fit-content;
+    padding: 2% 0;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ip{
+    width: 80%;
+    align-self: center;
+    margin: 2% 0;
+    background-color: white;
+    padding: 2%;
+    font-size: 130%;
+    color: black;
+    font-weight: bolder;
+}
+
+.entrylabel{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.options{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button{
+    background-color: var(--color5d);
+    width: fit-content;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 150%;
+    height: fit-content;
+    padding: 2% 5%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: black thin solid;
+    box-shadow: black 5px 3px 2px;
+}
