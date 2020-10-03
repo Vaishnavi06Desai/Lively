@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AnimalwelfareComponent } from './animalwelfare/animalwelfare.component';
+import { AskforassistanceComponent } from './askforassistance/askforassistance.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
+import { CommunityconnectComponent } from './communityconnect/communityconnect.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { FarmaffairsComponent } from './farmaffairs/farmaffairs.component';
 import { FarmperformaceindexComponent } from './farmperformaceindex/farmperformaceindex.component';
@@ -87,6 +89,18 @@ const routes: Routes = [
   {
     path: 'animalwelfare/healthrecordhistory/pdf',
     component: PdfComponent
+  },
+  {
+    path: 'animalwelfare/healthrecordhistory/pdf',
+    component: PdfComponent
+  },
+  {
+    path: 'communityconnect',
+    component: CommunityconnectComponent
+  },
+  {
+    path: 'communityconnect/afa',
+    component: AskforassistanceComponent
   },
   {
     path: '',

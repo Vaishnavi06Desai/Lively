@@ -39,6 +39,8 @@ import { HealthsystemComponent } from './healthsystem/healthsystem.component';
 import { HealthformComponent } from './healthform/healthform.component';
 import { HealthhistoryComponent } from './healthhistory/healthhistory.component';
 import { PdfComponent } from './pdf/pdf.component';
+import { CommunityconnectComponent } from './communityconnect/communityconnect.component';
+import { AskforassistanceComponent } from './askforassistance/askforassistance.component';
 
 //import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
 //import { ApiAiClient } from 'api-ai-javascript';
@@ -74,6 +76,8 @@ export class HammerConfig extends HammerGestureConfig {
     HealthformComponent,
     HealthhistoryComponent,
     PdfComponent,
+    CommunityconnectComponent,
+    AskforassistanceComponent,
   ],
   imports: [
     BrowserModule,

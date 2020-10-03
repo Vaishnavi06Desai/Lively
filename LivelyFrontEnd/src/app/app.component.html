@@ -1,4 +1,4 @@
-   
+<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 <div class="common_main">
 
   <mat-sidenav-container>
@@ -53,7 +53,7 @@
 
       <mat-sidenav-content class="content">
           
-          <div class="nav-bar html.translated-ltr">
+          <div class="nav-bar" *ngIf = "user">
               <div class="nav-bar-left">
                   <div class="nav-bar-hamburger" (click)="sidenav.toggle()">
                       <i class="fa fa-bars"></i>
@@ -67,23 +67,25 @@
                       <div class="nav-bar-item-text">Home</div>
                   </a>
 
-                  <a class="nav-bar-item" routerLink="/profile"><i class="fa fa-user menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
+                  <!-- <a class="nav-bar-item" routerLink="/profile"><i class="fa fa-user menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
                     <div class="nav-bar-item-text">Profile</div>
-                </a>
+                </a> -->
 
-                <a class="nav-bar-item" routerLink="/aboutus"><i class="fa fa-users menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
+                <!-- <a class="nav-bar-item" routerLink="/aboutus"><i class="fa fa-users menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
                     <div class="nav-bar-item-text">About us</div>
-                </a>
+                </a> -->
                 <a class="nav-bar-item" routerLink="/inventory"><i class="fa fa-users menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
                     <div class="nav-bar-item-text">Inventory</div>
                 </a>
-                <a class="nav-bar-item" routerLink="/animalwelfare/healthsystem"><i class="fa fa-users menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
+                <a class="nav-bar-item" routerLink="/animalwelfare/healthsystem"><i class="fa fa-heartbeat menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
                     <div class="nav-bar-item-text">Animal Welfare</div>
                 </a>
-                <a class="nav-bar-item" routerLink="/farmaffairs/fpi"><i class="fa fa-users menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
+                <a class="nav-bar-item" routerLink="/communityconnect/afa"><i class="fa fa-users menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
+                    <div class="nav-bar-item-text">Community Connect</div>
+                </a>
+                <a class="nav-bar-item" routerLink="/farmaffairs/fpi"><i class="fa fa-bar-chart menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
                     <div class="nav-bar-item-text">Farm Affairs</div>
                 </a>
-
                 <a class="nav-bar-item" routerLink="/login"><i class="fa fa-sign-in menuicon" style = "display: flex; flex-direction: column; justify-content: center; margin: 0 3px;"></i>
                     <div class="nav-bar-item-text" (click) = "logout()">Logout</div>
                 </a>

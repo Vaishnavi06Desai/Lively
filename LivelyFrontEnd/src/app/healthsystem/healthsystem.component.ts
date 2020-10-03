@@ -43,4 +43,9 @@ export class HealthsystemComponent implements OnInit {
      this.router.navigateByUrl(myurl);
    }
 
+   history(record){
+    var myurl = `/animalwelfare/healthrecordhistory?farm=${this.farm}&id=${record.payload.doc.id}`;
+    this.router.navigateByUrl(myurl);
+  }
+
 }

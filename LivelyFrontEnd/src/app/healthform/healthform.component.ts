@@ -124,6 +124,7 @@ export class HealthformComponent implements OnInit {
     })
     this._location.back();
   }
+  
   upload(id) {
     if (this.cusfileToUpload != null) {
       this.uploadfiles(this.cusfileToUpload, "CheckUpSchedule", id, "CheckupSchedule");

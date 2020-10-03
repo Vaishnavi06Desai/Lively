@@ -22,6 +22,8 @@ export class RegistrationComponent implements OnInit {
   messagepassword: string;
   errormessage: string;
 
+  role = "owner";
+
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
@@ -36,6 +38,10 @@ export class RegistrationComponent implements OnInit {
       }
     })
   }
+
+  desc = new FormGroup({
+    Description: new FormControl('')
+   })
 
 
   form = new FormGroup({
@@ -80,12 +86,12 @@ export class RegistrationComponent implements OnInit {
         flag = 'false'; 
     }
 
-    if (this.form.get("Password").value == "" || !(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/.test(this.form.get("Password").value)) )                           
-    { 
-        this.password = true;
-        this.messagepassword = "A strong 8 character password must contain at least:[a-z],[A-Z],[0-9],a special character"; 
-        flag = 'false'; 
-    }
+    // if ((this.form.get("Password").value == "" || !(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/.test(this.form.get("Password").value))) && (this.role == 'owner' || this.role == 'vet'))                           
+    // { 
+    //     this.password = true;
+    //     this.messagepassword = "A strong 8 character password must contain at least:[a-z],[A-Z],[0-9],a special character"; 
+    //     flag = 'false'; 
+    // }
 
      if (flag == 'true') {
       console.log("success");
@@ -96,6 +102,21 @@ export class RegistrationComponent implements OnInit {
 
 
    submit(){
-    this.auth.createUser(this.form.value);
+     if(this.role == "owner") this.auth.createUser(this.form.value);
+     else
+     {
+       var temp = {
+        "Email": this.form.get('Email').value,
+        "Contact": this.form.get('Contact').value,
+        "Username": this.form.get('Username').value,
+        "Description": this.desc.get('Description').value,
+        "Role": this.form.get('Role').value,
+      } 
+      if(this.role == "vet") this.auth.createUserVet(temp, this.form.get('Password').value);
+      else if(this.role == "ngo") this.auth.createother("NGOs", temp);
+      else if(this.role == "medical") this.auth.createother("MedicalCenters", temp);
+      else if(this.role == "cleanliness") this.auth.createother("WasteCollectors", temp);
+     }
+     
   }
 }

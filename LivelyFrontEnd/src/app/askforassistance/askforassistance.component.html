@@ -1,0 +1,58 @@
+<div class="main">
+    <div class="title">
+        Health System
+    </div>
+    <div class="frmbtns">
+        <div class="button b2" (click)="getcontacts('Vets')">
+            Vets
+        </div>
+        <div class="button b2" (click)="getcontacts('NGOs')">
+            NGOs
+        </div>
+        <div class="button b2" (click)="getcontacts('MedicalCenters')">
+            Medical Centers
+        </div>
+        <div class="button b2" (click)="getcontacts('WasteCollectors')">
+            Waste Collectors / Manure Collectors
+        </div>
+
+    </div>
+    <div class="records">
+        <div class="nameandbord">
+            <div class="topleftbord">
+
+            </div>
+            <div class="farmname">
+                {{name}}
+            </div>
+            <div class="toprightbord">
+
+            </div>
+        </div>
+        <div class="rowcontent">
+            <div class="leftbord"></div>
+            <div class="rows">
+                <div class="row" *ngFor="let record of contacts">
+                    <div class="record">
+                        <div class="rec">
+                            <B>Name:</B> {{record.payload.doc.data().Username}}
+                        </div>
+                        <div class="rec">
+                            <B>Email:</B> {{record.payload.doc.data().Email}}
+                        </div>
+                        <div class="rec">
+                            <B>Contact:</B> {{record.payload.doc.data().Contact}}
+                        </div>
+                        <div class="rec">
+                            <B>Description:</B> {{record.payload.doc.data().Description}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="rightbord"></div>
+
+        </div>
+        <div class="bottombord"></div>
+    </div>
+</div>

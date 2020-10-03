@@ -38,6 +38,38 @@ export class AuthService {
       })
   }
 
+  createother(type, data){
+    console.log(type);
+    this.db.collection(type).add(data)
+          .then(() => {
+            window.alert("Resgistered!")
+          }).catch(e => {
+            console.log(e);
+          });
+  }
+  createUserVet(user, password) {
+    console.log(user.Email, password)
+    this.afAuth.createUserWithEmailAndPassword(user.Email, password)
+      .then(userCredential => {
+        this.newUser = user;
+        console.log(this.newUser);
+        this.db.doc(`Vets/${userCredential.user.uid}`).set(this.newUser)
+          .then(() => {
+            this.router.navigate(['/login']);
+          }).catch(e => {
+            console.log(e);
+          });
+      })
+      .catch(error => {
+        this.eventAuthError.next(error);
+      });
+  }
+
+  insertNotOwnerData(data){
+
+
+  }
+
   createUser(user) {
     this.afAuth.createUserWithEmailAndPassword(user.Email, user.Password)
       .then(userCredential => {

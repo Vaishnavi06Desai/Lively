@@ -5,53 +5,66 @@
             Register
         </div>
         <div class="registerfield">
-            <div class = "error" *ngIf = "error">
+            <div class="error" *ngIf="error">
                 {{errormessage}}
             </div>
             <form [formGroup]="form" class="input">
                 <!-- <div class="input" > -->
                 <input placeholder="Enter Username" formControlName="Username" type="text" class="ip" *ngIf="!username">
-                <div *ngIf="username"
-                    class = "errormsg">
+                <div *ngIf="username" class="errormsg">
                     <div class="message sb1">
                         {{messageusername}}
                     </div>
-                    <input placeholder="Enter Username" formControlName="Username" type="text" class="ip iperror"
-                       >
+                    <input placeholder="Enter Username" formControlName="Username" type="text" class="ip iperror">
                 </div>
                 <input placeholder="Enter Email" formControlName="Email" type="email" class="ip" *ngIf="!email">
-                <div *ngIf="email"
-                class = "errormsg">
+                <div *ngIf="email" class="errormsg">
                     <div class="message sb1">
                         {{messageemail}}
                     </div>
-                    <input placeholder="Enter Email" formControlName="Email" type="email" class="ip iperror"
-                        >
+                    <input placeholder="Enter Email" formControlName="Email" type="email" class="ip iperror">
                 </div>
-                <input placeholder="Enter Contact Number" formControlName="Contact" type="number" class="ip" *ngIf="!contact">
-                <div *ngIf="contact"
-                class = "errormsg">
+                <input placeholder="Enter Contact Number" formControlName="Contact" type="number" class="ip"
+                    *ngIf="!contact">
+                <div *ngIf="contact" class="errormsg">
                     <div class="message sb1">
                         {{messagecontact}}
                     </div>
-                    <input placeholder="Enter Contact Number" formControlName="Contact" type="number" class="ip iperror"
-                        >
+                    <input placeholder="Enter Contact Number" formControlName="Contact" type="number"
+                        class="ip iperror">
                 </div>
-                <input placeholder="Enter Password" formControlName="Password" type="password" class="ip" *ngIf="!password">
-                <div *ngIf="password"
-                class = "errormsg">
+                <mat-form-field appearance="fill" class="ip">
+                    <mat-label class="entrylabel">Select Health condition</mat-label>
+                    <mat-select [(value)]="role" class="options">
+                        <mat-option value="owner" class="options">
+                            Livestock Owner</mat-option>
+                        <mat-option value="ngo" class="options">
+                            NGO</mat-option>
+                        <mat-option value="vet" class="options">
+                            Vet clinic</mat-option>
+                        <mat-option value="medical" class="options">
+                            Medical / Research Center</mat-option>
+                        <mat-option value="cleanliness" class="options">
+                            Cleanliness agency / manure collectors</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <form [formGroup]="desc" class="ip" *ngIf = "!(role == 'owner')">
+                    <textarea placeholder="Enter Description" formControlName="Description" type="text" style = "width: 100%; height: 100%;"></textarea>
+                    </form>
+                <input placeholder="Enter Password" formControlName="Password" type="password" class="ip"
+                    *ngIf="!password && (role == 'owner' || role == 'vet')">
+                <div *ngIf="password" class="errormsg">
                     <div class="message sb1">
                         {{messagepassword}}
                     </div>
-                    <input placeholder="Enter Password" formControlName="Password" type="password" class="ip iperror"
-                        >
+                    <input placeholder="Enter Password" formControlName="Password" type="password" class="ip iperror">
                 </div>
                 <a routerLink="/login" class="login">
                     Already registered? Login.
                 </a>
                 <!-- </div> -->
             </form>
-            <div class="submit" (click) = "validate()">
+            <div class="submit" (click)="validate()">
                 <div class="submitbutton">
                     Register
 

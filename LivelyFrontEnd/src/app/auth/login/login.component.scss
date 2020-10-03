@@ -4,15 +4,17 @@
 
 .main{
     min-height: 100vh;
-    background-image: url("../../../assets/images/bg.png");
-    background-size: 100% 100%;
+    //background-image: url("../../../assets/images/bg.png");
+    //background-size: 100% 100%;
+    background-color: aqua;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     min-width: 100%;
     margin-top: -6vh;
-    z-index: 1000;
+    border: solid black;
+    //z-index: 1000;
 
 }
 
