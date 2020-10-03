@@ -41,6 +41,9 @@ import { HealthhistoryComponent } from './healthhistory/healthhistory.component'
 import { PdfComponent } from './pdf/pdf.component';
 import { CommunityconnectComponent } from './communityconnect/communityconnect.component';
 import { AskforassistanceComponent } from './askforassistance/askforassistance.component';
+import { ForumComponent } from './forum/forum.component';
+import { FeedComponent } from './feed/feed.component';
+import { CleanlinessComponent } from './cleanliness/cleanliness.component';
 
 //import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
 //import { ApiAiClient } from 'api-ai-javascript';
@@ -78,6 +81,9 @@ export class HammerConfig extends HammerGestureConfig {
     PdfComponent,
     CommunityconnectComponent,
     AskforassistanceComponent,
+    ForumComponent,
+    FeedComponent,
+    CleanlinessComponent,
   ],
   imports: [
     BrowserModule,

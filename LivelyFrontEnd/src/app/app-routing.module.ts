@@ -9,7 +9,9 @@ import { CommunityconnectComponent } from './communityconnect/communityconnect.c
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { FarmaffairsComponent } from './farmaffairs/farmaffairs.component';
 import { FarmperformaceindexComponent } from './farmperformaceindex/farmperformaceindex.component';
+import { FeedComponent } from './feed/feed.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { ForumComponent } from './forum/forum.component';
 import { HealthformComponent } from './healthform/healthform.component';
 import { HealthhistoryComponent } from './healthhistory/healthhistory.component';
 import { HealthsystemComponent } from './healthsystem/healthsystem.component';
@@ -101,6 +103,14 @@ const routes: Routes = [
   {
     path: 'communityconnect/afa',
     component: AskforassistanceComponent
+  },
+  {
+    path: 'communityconnect/forum',
+    component: ForumComponent
+  },
+  {
+    path: 'animalwelfare/feed',
+    component: FeedComponent
   },
   {
     path: '',

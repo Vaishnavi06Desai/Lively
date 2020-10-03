@@ -1,0 +1,104 @@
+.main{
+    height: 94vh;
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    background-color: var(--color5);
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    height: 10vh;
+    background-color: aqua;
+}
+
+.forum{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.area{
+    height: 20vh;
+    //background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.comment{
+    width: 90%;
+    height: 70%;
+    align-self: center;
+    background-color: white;
+}
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.button{
+    background-color: var(--color2);
+    width: fit-content;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 150%;
+    height: fit-content;
+    cursor: pointer;
+    border-radius: 10px;
+    border: black thin solid;
+    box-shadow: black 5px 3px 2px;
+    align-self: center;
+    color: white;
+    padding: 1%;
+    align-self: flex-end;
+}
+
+.message{
+    width: 90%;
+    height: 15vh;
+    background-color: blanchedalmond;
+    align-self: center;
+    margin: 10px 0;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.username{
+    height: 20%;
+    //background-color: aqua;
+    padding-left: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+}
+
+.msg{
+    height: 50%;
+    //background-color: aquamarine;
+    padding: 1%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.likes{
+    height: 30%;
+    //background-color: blueviolet;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon{
+    font-size: x-large;
+    align-self: center;
+    margin: 0 10px;
+    cursor: pointer;
+    display: flex;
+    //background-color: aquamarine;;
+}
+

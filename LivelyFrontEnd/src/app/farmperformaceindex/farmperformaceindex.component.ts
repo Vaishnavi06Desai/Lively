@@ -9,19 +9,19 @@ export class FarmperformaceindexComponent implements OnInit {
 
   public doughnutChartLabels_p = ['Poor', 'Average', 'Good', 'Healthy'];
   public doughnutChartData_p = [100, 150, 180, 110];
-  public doughnutChartType_p = 'pie';
+  public doughnutChartType_p = 'doughnut';
 
   public doughnutChartLabels_c = ['Poor', 'Average', 'Good', 'Healthy'];
   public doughnutChartData_c = [90, 110, 220, 120];
-  public doughnutChartType_c = 'pie';
+  public doughnutChartType_c = 'doughnut';
 
   public doughnutChartLabels_pi = ['Poor', 'Average', 'Good', 'Healthy'];
   public doughnutChartData_pi = [80, 170, 200, 90];
-  public doughnutChartType_pi = 'pie';
+  public doughnutChartType_pi = 'doughnut';
 
   public doughnutChartLabels_g = ['Poor', 'Average', 'Good', 'Healthy'];
   public doughnutChartData_g = [120, 130, 140, 150];
-  public doughnutChartType_g = 'pie';
+  public doughnutChartType_g = 'doughnut';
 
   public radarChartLabels = ['Poultry', 'Cattle', 'Pigs', 'Goats'];
   public radarChartData = [

@@ -85,9 +85,9 @@
 .content{
     justify-content: space-around;
     top: 39px;
-    background-image: url(../assets/images/bg1.png);
+    //background-image: url(../assets/images/bg1.png);
     //background-color: white;
-    background-size: 100% 100%;
+    background-color: white;
     //position: -webkit-sticky;
     //top: 39px;
 }
@@ -147,7 +147,7 @@
 
 .mainpage{
     //background-image: url(../assets/images/bg-cow.jpg);
-    background-size: 100% 100%;
+    //background-size: 100% 100%;
     margin-top: 6vh;
     min-height: 94vh;
 
@@ -160,8 +160,8 @@
 //   /* Center and scale the image nicely */
 //   background-position: center;
 //   background-repeat: no-repeat;
-  background-size: cover;
-    opacity: 0.9;
+ // background-size: cover;
+    opacity: 0.99;
 }
 
 .nav-bar-item-text{

@@ -1,0 +1,88 @@
+<div class="main">
+    <div class="title">
+        Health System
+    </div>
+    <div class="frmbtns">
+        <div *ngFor="let farm of farms" style="display: flex; margin: 10px 10px;">
+            <div class="button b2" (click)="getrecords(farm.payload.doc.id)">
+                {{farm.payload.doc.id}}
+
+            </div>
+        </div>
+    </div>
+    <div class="records">
+        <div class="nameandbord">
+            <div class="topleftbord">
+
+            </div>
+            <div class="farmname">
+                {{farmname}}
+            </div>
+            <div class="toprightbord">
+
+            </div>
+        </div>
+        <div class="rowcontent">
+            <div class="leftbord"></div>
+            <div class="rows">
+                <div class="row" *ngFor="let record of livestock">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div class="record">
+                            <div class="rec">
+                                <B>ID:</B> {{record.payload.doc.data().ID}}
+                            </div>
+                            <div class="rec" *ngIf="record.payload.doc.data().Birth != 'None'">
+                                <B>Birth Date:</B> {{record.payload.doc.data().Birth}}
+                            </div>
+                            <div class="rec" *ngIf="record.payload.doc.data().Buy != 'None'">
+                                <B>Buying Date:</B> {{record.payload.doc.data().Buy}}
+                            </div>
+                            <div class="rec">
+                                <B>Type:</B> {{record.payload.doc.data().Type}}
+                            </div>
+                            <div class="rec" *ngIf="record.payload.doc.data().Breed != null">
+                                <B>Breed:</B> {{record.payload.doc.data().Breed}}
+                            </div>
+                            <div class="rec" *ngIf="record.payload.doc.data().SubBreed != null">
+                                <B>Sub Breed:</B> {{record.payload.doc.data().SubBreed}}
+                            </div>
+                            <div class="rec">
+                                <B>Age:</B> {{record.payload.doc.data().Age}}
+                            </div>
+                            <div class="rec">
+                                <B>Gender:</B> {{record.payload.doc.data().Gender}}
+                            </div>
+                            <div class="rec">
+                                <B>Weight:</B> {{record.payload.doc.data().Weight}}
+                            </div>
+                            <div class="rec">
+                                <B>Place Of Origin:</B> {{record.payload.doc.data().PlaceOfOrigin}}
+                            </div>
+                            <div class="rec">
+                                <B>Health Condition:</B> {{record.payload.doc.data().HealthCondition}}
+                            </div>
+                            <div class="rec">
+                                <B>Quantity:</B> {{record.payload.doc.data().Quantity}}
+                            </div>
+                        </div>
+                        <!-- <div style = "width: 20%; display: flex; flex-direction: column; justify-content: space-between;"> -->
+                        <div class="modify">
+                            <div class="rec icon" style="color: blue;" (click)="switchisupload()"> Upload Feed Schedule
+                            </div>
+                            <div class="rec icon" style="color: blue;" (click)="update(record)"> View Feed Schedule
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 100%; display: flex; justify-content: space-between;" *ngIf = "isupload">
+                        <input type="file" id="file" (change)="upload($event.target.files)" class="ip">
+                        <div class = "button b3" (click) = "uploadfile(record)">Upload</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="rightbord"></div>
+
+        </div>
+        <div class="bottombord"></div>
+    </div>
+</div>
