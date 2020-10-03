@@ -1,0 +1,76 @@
+<div class="main">
+    <div class="title">
+        Health History
+    </div>
+    <div class="records">
+        <div class="nameandbord">
+            <div class="topleftbord">
+
+            </div>
+            <div class="farmname">
+                {{farm}} Animal ID: {{animal.payload.data().ID}}
+            </div>
+            <div class="toprightbord">
+
+            </div>
+        </div>
+        <div class="rowcontent">
+            <div class="leftbord"></div>
+            <div class="rows">
+                <div class="row" *ngFor="let record of health">
+                    <div class="rec" style="width: 100%; background-color: var(--color5);">
+                        <B>Date: </B> {{record.payload.doc.id}}
+                    </div>
+                    <div class="record">
+                        <div class="rec">
+                            <B>Health Condition: </B> {{record.payload.doc.data().HealthCondition}}
+                        </div>
+                        <div class="rec" *ngIf="!(record.payload.doc.data().CheckUpSchedule == undefined)">
+                            <B>Checkup Schedule: </B>
+                            <div class="modify">
+                                <div class="rec icon" style="color: blue;" (click)="gotopdf(record, 'CheckUpSchedule')"> View</div>
+                            </div>
+                        </div>
+                        <div class="rec" *ngIf="!(record.payload.doc.data().MedicalReport == undefined)">
+                            <B>Medical Report: </B>
+                            <div class="modify">
+                                <div class="rec icon" style="color: blue;" (click)="gotopdf(record, 'MedicalReport')"> View</div>
+                            </div>
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().Disease != ''">
+                            <B>Disease:</B> {{record.payload.doc.data().Disease}}
+                        </div>
+                        <div class="rec" *ngIf="!(record.payload.doc.data().VaccinationSchedule == undefined)">
+                            <B>Vaccination Schedule:</B>
+                            <div class="modify">
+                                <div class="rec icon" style="color: blue;" (click)="gotopdf(record, 'VaccinationSchedule')"> View</div>
+                            </div>
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().VaccinationDescription != ''">
+                            <B>Vaccination Description:</B> {{record.payload.doc.data().VaccinationDescription}}
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().VaccinationDate != ''">
+                            <B>Vaccination Date:</B> {{record.payload.doc.data().VaccinationDate}}
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().PregnancyDueDate != ''">
+                            <B>Pregnancy Due Date:</B> {{record.payload.doc.data().PregnancyDueDate}}
+                        </div>
+                        <div class="rec" *ngIf="!(record.payload.doc.data().PregnancyCheckUpchedule == undefined)">
+                            <B>Pregnancy Checkup Schedule:</B>
+                            <div class="modify">
+                                <div class="rec icon" style="color: blue;" (click)="gotopdf(record, 'PregnancyCheckUpchedule')"> View</div>
+                            </div>
+                        </div>
+                        <div class="rec" *ngIf="record.payload.doc.data().PregnancyMedicationDetails != ''">
+                            <B>Pregnancy Medication Details:</B> {{record.payload.doc.data().PregnancyMedicationDetails}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="rightbord"></div>
+
+        </div>
+        <div class="bottombord"></div>
+    </div>
+</div>

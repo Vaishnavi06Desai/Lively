@@ -52,3 +52,53 @@
     border: black thin solid;
     box-shadow: black 5px 3px 2px;
 }
+
+.optional{
+    //border: solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.add{
+    flex-basis: 20%;
+    //background-color: pink;
+    align-self: center;
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+
+.ops{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.addbutcontain{
+    flex-basis: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //background-color: white;
+}
+
+.title{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 200%;
+    padding: 2%;
+    color: white;
+}
+
+.addbut{
+    font-size: 200%;
+    background-color: white;
+    width: fit-content;
+    align-self: center;
+    padding: 5%;
+    border: black solid thin;
+    box-shadow: 2px 2px 5px black;
+    cursor: pointer;
+}
+.addbut:hover{
+    box-shadow: none;
+}

@@ -1,21 +1,3 @@
-<!-- <form [formGroup]="files" class="inputf">
-    <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
-            (change)="cus($event.target.files)" class="if"></div>
-</form>
-<form [formGroup]="files" class="inputf">
-    <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
-            (change)="mr($event.target.files)" class="if"></div>   
-</form>
-<form [formGroup]="files" class="inputf">
-    <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
-            (change)="vs($event.target.files)" class="if"></div>  
-</form>
-<form [formGroup]="files" class="inputf">
-    <div class="row"><input formControlName="CheckupSchedule" type="file" id="file"
-            (change)="pcs($event.target.files)" class="if"></div>
-</form>
-<div class = "button" (click) = "upload()">Upload</div>    -->
-
 <div class="main">
     <div class="formcard">
         <form [formGroup]="form" class="input">
@@ -32,98 +14,107 @@
                         Worse</mat-option>
                 </mat-select>
             </mat-form-field>
-            <input type="file" id="file" (change)="cus($event.target.files)"
-                class="ip">
-            <input type="file" id="file" (change)="mr($event.target.files)"
-                class="ip">
-                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
-            <input type="file" id="file" (change)="vs($event.target.files)"
-                class="ip">
-                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
-                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
-                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
-            <input type="file" id="file" (change)="pcs($event.target.files)"
-                class="ip">
-                <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
-            <!-- <input placeholder="Enter Animal ID / Coup Id / Set Id" formControlName="ID" type="text" class="ip">
-            <mat-form-field appearance="fill" class="ip">
-                <mat-label class="entrylabel">Select Farm</mat-label>
-                <mat-select [(value)]="farm" class="options">
-                    <div *ngFor="let type of farms">
-                        <mat-option value="{{type.payload.doc.id}}" class="options">
-                            {{type.payload.doc.id}}</mat-option>
+            <div class="optional">
+                <div class="add" (click) = "flipcheckup(ischeckup)">
+                    <div class="addbutcontain">
+                        <div class = "addbut" *ngIf = "!ischeckup" (click) = "flipcheckup(ischeckup)">
+                            &#x002B;
+                        </div>
+                        <div class = "addbut" *ngIf = "ischeckup" (click) = "flipcheckup(ischeckup)">
+                            &#x2212;
+                        </div>
                     </div>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="fill" class="ip">
-                <mat-label class="entrylabel">Select Entry Type</mat-label>
-                <mat-select [(value)]="selected1" class="options">
-                    <mat-option value="birth" class="options">Enter Birth Date</mat-option>
-                    <mat-option value="buy" class="options">Enter Buying Date</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <input placeholder="Enter Birth Date" formControlName="Birth" type="text" class="ip"
-                *ngIf="selected1 == 'birth'">
-            <input placeholder="Enter Buying Date" formControlName="Buy" type="text" class="ip"
-                *ngIf="selected1 == 'buy'">
-                
-            <mat-form-field appearance="fill" class="ip">
-                <mat-label class="entrylabel">Select Type</mat-label>
-                <mat-select [(value)]="type" class="options">
-                    <div *ngFor="let type of types" (click) = "submittype(type.payload.doc.id)">
-                        <mat-option value="{{type.payload.doc.data().Name}}" class="options">
-                            {{type.payload.doc.data().Name}}</mat-option>
+                    <div class="title">
+                        Upload Checkup Schedule
                     </div>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="fill" class="ip" *ngIf="type != null">
-                <mat-label class="entrylabel">Select Breed</mat-label>
-                <mat-select [(value)]="breed" class="options">
-                    <div *ngFor="let type of breeds" (click) = "submitbreed(type.payload.doc.id)">
-                        <mat-option value="{{type.payload.doc.data().Name}}" class="options">
-                            {{type.payload.doc.data().Name}}</mat-option>
+                </div>
+                <div class="ops" *ngIf = "ischeckup">
+                    <input type="file" id="file" (change)="cus($event.target.files)" class="ip">
+                </div>
+            </div>
+            <div class="optional">
+                <div class="add" (click) = "flipmedrep(ismedrep)">
+                    <div class="addbutcontain">
+                        <div class = "addbut" *ngIf = "!ismedrep" (click) = "flipmedrep(ismedrep)">
+                            &#x002B;
+                        </div>
+                        <div class = "addbut" *ngIf = "ismedrep" (click) = "flipmedrep(ismedrep)">
+                            &#x2212;
+                        </div>
                     </div>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="fill" class="ip" *ngIf="breed != null">
-                <mat-label class="entrylabel">Select Sub Breed</mat-label>
-                <mat-select [(value)]="subbreed" class="options">
-                    <div *ngFor="let type of subbreeds" >
-                        <mat-option value="{{type.payload.doc.data().Name}}" class="options">
-                            {{type.payload.doc.data().Name}}</mat-option>
+                    <div class="title">
+                        Upload Medical Report
                     </div>
-                </mat-select>
-            </mat-form-field>
-            <input placeholder="Enter Age" formControlName="Age" type="text" class="ip">
-            <mat-form-field appearance="fill" class="ip">
-                <mat-label class="entrylabel">Select Gender</mat-label>
-                <mat-select [(value)]="gender" class="options">
-                    <mat-option value="female" class="options">Female</mat-option>
-                    <mat-option value="male" class="options">Male</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <input placeholder="Enter Weight" formControlName="Weight" type="text" class="ip">
-            <input placeholder="Enter Place of Origin" formControlName="PlaceOfOrigin" type="text" class="ip">
-            <mat-form-field appearance="fill" class="ip">
-                <mat-label class="entrylabel">Select Health condition</mat-label>
-                <mat-select [(value)]="health" class="options">
-                    <mat-option value="healthy" class="options">
-                        Healthy</mat-option>
-                    <mat-option value="average" class="options">
-                        Average</mat-option>
-                    <mat-option value="bad" class="options">
-                        Bad</mat-option>
-                    <mat-option value="worse" class="options">
-                        Worse</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <input placeholder="Enter Quantity" formControlName="Quantity" type="number" class="ip"> -->
-
-
+                </div>
+                <div class="ops" *ngIf = "ismedrep">
+                    <input type="file" id="file" (change)="mr($event.target.files)" class="ip">
+                </div>
+            </div>
+            <div class="optional">
+                <div class="add" (click) = "flipdisease(isdisease)">
+                    <div class="addbutcontain">
+                        <div class = "addbut" *ngIf = "!isdisease" (click) = "flipdisease(isdisease)">
+                            &#x002B;
+                        </div>
+                        <div class = "addbut" *ngIf = "isdisease" (click) = "flipdisease(isdisease)">
+                            &#x2212;
+                        </div>
+                    </div>
+                    <div class="title">
+                        Disease
+                    </div>
+                </div>
+                <div class="ops" *ngIf = "isdisease">
+                    <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
+                </div>
+            </div>
+            <div class="optional">
+                <div class="add" (click) = "flipvaccination(isvaccination)">
+                    <div class="addbutcontain">
+                        <div class = "addbut" *ngIf = "!isvaccination" (click) = "flipvaccination(isvaccination)">
+                            &#x002B;
+                        </div>
+                        <div class = "addbut" *ngIf = "isvaccination" (click) = "flipvaccination(isvaccination)">
+                            &#x2212;
+                        </div>
+                    </div>
+                    <div class="title">
+                        Vaccination
+                    </div>
+                </div>
+                <div class="ops" *ngIf = "isvaccination">
+                    <input type="file" id="file" (change)="vs($event.target.files)" class="ip">
+                    <textarea placeholder="Enter Vaccination Description" formControlName="VaccinationDescription" type="text" class="ip"></textarea>
+                    <input placeholder="Enter Vaccination Date" formControlName="VaccinationDate" type="text" class="ip">
+                </div>
+            </div>
+            <div class="optional" *ngIf = "canbepregnant">
+                <div class="add" (click) = "flippregnancy(ispregnancy)">
+                    <div class="addbutcontain">
+                        <div class = "addbut" *ngIf = "!ispregnancy" (click) = "flippregnancy(ispregnancy)">
+                            &#x002B;
+                        </div>
+                        <div class = "addbut" *ngIf = "ispregnancy" (click) = "flippregnancy(ispregnancy)">
+                            &#x2212;
+                        </div>
+                    </div>
+                    <div class="title">
+                        Pregnancy
+                    </div>
+                </div>
+                <div class="ops" *ngIf = "ispregnancy">
+                    <input placeholder="Enter Due Date" formControlName="PregnancyDueDate" type="text" class="ip">
+                <input type="file" id="file" (change)="pcs($event.target.files)" class="ip">
+                <textarea placeholder="Enter Medication details" formControlName="PregnancyMedicationDetails" type="text" class="ip"></textarea>
+                </div>
+            </div>
         </form>
-        <div style="display: flex; justify-content: center; width: 100%;">
-            <div class="button" (click)="upload()">
+        <div style="display: flex; justify-content: space-evenly; width: 100%;">
+            <div class="button" (click)="submit()">
                 Submit
+            </div>
+            <div class="button" (click)="history()">
+                Check Health Record History
             </div>
         </div>
     </div>

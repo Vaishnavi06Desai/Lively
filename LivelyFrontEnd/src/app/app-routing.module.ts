@@ -9,11 +9,13 @@ import { FarmaffairsComponent } from './farmaffairs/farmaffairs.component';
 import { FarmperformaceindexComponent } from './farmperformaceindex/farmperformaceindex.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { HealthformComponent } from './healthform/healthform.component';
+import { HealthhistoryComponent } from './healthhistory/healthhistory.component';
 import { HealthsystemComponent } from './healthsystem/healthsystem.component';
 import { HomeComponent } from './home/home.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { InventoryrecordComponent } from './inventoryrecord/inventoryrecord.component';
 import { NewtypeComponent } from './newtype/newtype.component';
+import { PdfComponent } from './pdf/pdf.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -77,6 +79,14 @@ const routes: Routes = [
   {
     path: 'animalwelfare/healthrecord',
     component: HealthformComponent
+  },
+  {
+    path: 'animalwelfare/healthrecordhistory',
+    component: HealthhistoryComponent
+  },
+  {
+    path: 'animalwelfare/healthrecordhistory/pdf',
+    component: PdfComponent
   },
   {
     path: '',

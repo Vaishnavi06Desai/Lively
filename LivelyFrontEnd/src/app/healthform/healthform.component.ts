@@ -5,6 +5,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../auth/auth.service';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
+import {Location} from '@angular/common';
 import { tap, finalize } from 'rxjs/operators';
 
 @Component({
@@ -14,7 +15,8 @@ import { tap, finalize } from 'rxjs/operators';
 })
 export class HealthformComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private db: AngularFirestore, private auth: AuthService, private storage: AngularFireStorage) { }
+  constructor(private route: ActivatedRoute, private router: Router, private db: AngularFirestore, private auth: AuthService, 
+    private storage: AngularFireStorage, private _location: Location) { }
 
   userID: any;
   farm: any;
@@ -27,15 +29,13 @@ export class HealthformComponent implements OnInit {
 
   health = "healthy"
 
+  canbepregnant = true;
+
   isvaccination = false;
-  isvschedule = false;
-  isvdesc = false;
-  isvdate = false;
+  ischeckup = false;
+  ismedrep = false;
   isdisease = false;
   ispregnancy = false;
-  ispdd = false;
-  ispcheckup = false;
-  ispmeddets = false;
 
   cusfileToUpload: any;
   mrfileToUpload: any;
@@ -48,20 +48,26 @@ export class HealthformComponent implements OnInit {
         this.userID = user.uid;
         this.farm = this.route.snapshot.queryParams['farm'];
         this.id = this.route.snapshot.queryParams['id'];
+        this.canbepregnantfunc();
         //console.log(farm, id);
       })
   }
 
+  canbepregnantfunc(){
+    this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(this.id).snapshotChanges().subscribe(res => {
+      var dets;
+      dets = res;
+      if(dets.payload.data().Gender == "male") this.canbepregnant = false; 
+    })
+  }
+  
+
   form = new FormGroup({
     HealthCondition: new FormControl(''),
     Disease: new FormControl(''),
-    CheckupSchedule: new FormControl(''),
-    MedialReport: new FormControl('None'),
-    VaccinationSchedule: new FormControl('None'),
     VaccinationDescription: new FormControl(''),
-    Date: new FormControl(''),
+    VaccinationDate: new FormControl(''),
     PregnancyDueDate: new FormControl(''),
-    PregnancyCheckupSchedule: new FormControl(''),
     PregnancyMedicationDetails: new FormControl(''),
   })
 
@@ -99,28 +105,62 @@ export class HealthformComponent implements OnInit {
           console.log(res);
           var temp = {}
           temp[key] = res;
-          this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(this.id).collection('HealthRecords').doc(hrid).update(temp).then().catch(e => {console.log(e)});
+          this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(this.id).collection('HealthRecords').doc(hrid).update(temp).then(e => {
+          }).catch(e => { console.log(e) });
           //this.db.collection('Files').add({Url: res})});
         });
       });
   }
+  submit() {
+    console.log(this.farm, this.id)
+    this.form.get('HealthCondition').setValue(this.health);
+    this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(this.id).update({ HealthCondition: this.health }).then(e => {
+      var date = Date();
+      this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(this.id).collection('HealthRecords').doc(date).set(this.form.value).then(e => {
+        this.upload(date);
+      })
+    }).catch(e => {
+      console.log("1", e)
+    })
+    this._location.back();
+  }
+  upload(id) {
+    if (this.cusfileToUpload != null) {
+      this.uploadfiles(this.cusfileToUpload, "CheckUpSchedule", id, "CheckupSchedule");
+    }
+    if (this.mrfileToUpload != null) {
+      this.uploadfiles(this.mrfileToUpload, "MedicalReport", id, "MedicalReport");
+    }
+    if (this.vsfileToUpload != null) {
+      this.uploadfiles(this.vsfileToUpload, "VaccinationSchedule", id, "VaccinationSchedule");
+    }
+    if (this.pcsfileToUpload != null) {
+      this.uploadfiles(this.pcsfileToUpload, "PregnancyCheckUpchedule", id, "PregnancyCheckupSchedule");
+    }
+  }
 
-  upload(){
-    if(this.cusfileToUpload != null)
-    {
-      this.uploadfiles(this.cusfileToUpload, "CheckUpSchedule", "123", "CheckupSchedule");
-    }
-    if(this.mrfileToUpload != null)
-    {
-      this.uploadfiles(this.mrfileToUpload, "MedicalReport", "123", "MedicalReport");
-    }
-    if(this.vsfileToUpload != null)
-    {
-      this.uploadfiles(this.vsfileToUpload, "VaccinationSchedule", "123", "VaccinationSchedule");
-    }
-    if(this.pcsfileToUpload != null)
-    {
-      this.uploadfiles(this.pcsfileToUpload, "PregnancyCheckUpchedule", "123", "PregnancyCheckupSchedule");
-    }
+  flipvaccination(bool) {
+    this.isvaccination = !bool;
+  }
+
+  flippregnancy(bool) {
+    this.ispregnancy = !bool;
+  }
+
+  flipdisease(bool) {
+    this.isdisease = !bool;
+  }
+
+  flipcheckup(bool) {
+    this.ischeckup = !bool;
+  }
+
+  flipmedrep(bool) {
+    this.ismedrep = !bool;
+  }
+
+  history(){
+    var myurl = `/animalwelfare/healthrecordhistory?farm=${this.farm}&id=${this.id}`;
+    this.router.navigateByUrl(myurl);
   }
 }
