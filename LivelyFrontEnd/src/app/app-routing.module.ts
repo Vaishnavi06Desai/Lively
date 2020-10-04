@@ -7,6 +7,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { CommunityconnectComponent } from './communityconnect/communityconnect.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
+import { EventsComponent } from './events/events.component';
 import { FarmaffairsComponent } from './farmaffairs/farmaffairs.component';
 import { FarmperformaceindexComponent } from './farmperformaceindex/farmperformaceindex.component';
 import { FeedComponent } from './feed/feed.component';
@@ -18,6 +19,7 @@ import { HealthsystemComponent } from './healthsystem/healthsystem.component';
 import { HomeComponent } from './home/home.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { InventoryrecordComponent } from './inventoryrecord/inventoryrecord.component';
+import { LibraryComponent } from './library/library.component';
 import { NewtypeComponent } from './newtype/newtype.component';
 import { PdfComponent } from './pdf/pdf.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -73,6 +75,10 @@ const routes: Routes = [
     component: FarmperformaceindexComponent
   },
   {
+    path: 'farmaffairs/events',
+    component: EventsComponent
+  },
+  {
     path: 'animalwelfare',
     component: AnimalwelfareComponent
   },
@@ -111,6 +117,10 @@ const routes: Routes = [
   {
     path: 'animalwelfare/feed',
     component: FeedComponent
+  },
+  {
+    path: 'animalwelfare/library',
+    component: LibraryComponent
   },
   {
     path: '',

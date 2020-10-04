@@ -44,6 +44,8 @@ import { AskforassistanceComponent } from './askforassistance/askforassistance.c
 import { ForumComponent } from './forum/forum.component';
 import { FeedComponent } from './feed/feed.component';
 import { CleanlinessComponent } from './cleanliness/cleanliness.component';
+import { LibraryComponent } from './library/library.component';
+import { EventsComponent } from './events/events.component';
 
 //import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
 //import { ApiAiClient } from 'api-ai-javascript';
@@ -84,6 +86,8 @@ export class HammerConfig extends HammerGestureConfig {
     ForumComponent,
     FeedComponent,
     CleanlinessComponent,
+    LibraryComponent,
+    EventsComponent,
   ],
   imports: [
     BrowserModule,
