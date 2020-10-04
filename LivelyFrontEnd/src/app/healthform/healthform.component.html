@@ -17,10 +17,10 @@
             <div class="optional">
                 <div class="add" (click) = "flipcheckup(ischeckup)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!ischeckup" (click) = "flipcheckup(ischeckup)">
+                        <div class = "addbut" *ngIf = "!ischeckup">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "ischeckup" (click) = "flipcheckup(ischeckup)">
+                        <div class = "addbut" *ngIf = "ischeckup">
                             &#x2212;
                         </div>
                     </div>
@@ -35,10 +35,10 @@
             <div class="optional">
                 <div class="add" (click) = "flipmedrep(ismedrep)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!ismedrep" (click) = "flipmedrep(ismedrep)">
+                        <div class = "addbut" *ngIf = "!ismedrep">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "ismedrep" (click) = "flipmedrep(ismedrep)">
+                        <div class = "addbut" *ngIf = "ismedrep">
                             &#x2212;
                         </div>
                     </div>
@@ -53,10 +53,10 @@
             <div class="optional">
                 <div class="add" (click) = "flipdisease(isdisease)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!isdisease" (click) = "flipdisease(isdisease)">
+                        <div class = "addbut" *ngIf = "!isdisease">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "isdisease" (click) = "flipdisease(isdisease)">
+                        <div class = "addbut" *ngIf = "isdisease">
                             &#x2212;
                         </div>
                     </div>
@@ -71,10 +71,10 @@
             <div class="optional">
                 <div class="add" (click) = "flipvaccination(isvaccination)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!isvaccination" (click) = "flipvaccination(isvaccination)">
+                        <div class = "addbut" *ngIf = "!isvaccination">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "isvaccination" (click) = "flipvaccination(isvaccination)">
+                        <div class = "addbut" *ngIf = "isvaccination">
                             &#x2212;
                         </div>
                     </div>
@@ -91,10 +91,10 @@
             <div class="optional" *ngIf = "canbepregnant">
                 <div class="add" (click) = "flippregnancy(ispregnancy)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!ispregnancy" (click) = "flippregnancy(ispregnancy)">
+                        <div class = "addbut" *ngIf = "!ispregnancy">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "ispregnancy" (click) = "flippregnancy(ispregnancy)">
+                        <div class = "addbut" *ngIf = "ispregnancy">
                             &#x2212;
                         </div>
                     </div>
