@@ -5,6 +5,7 @@ import { AnimalwelfareComponent } from './animalwelfare/animalwelfare.component'
 import { AskforassistanceComponent } from './askforassistance/askforassistance.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
+import { CleanlinessComponent } from './cleanliness/cleanliness.component';
 import { CommunityconnectComponent } from './communityconnect/communityconnect.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { EventsComponent } from './events/events.component';
@@ -67,18 +68,6 @@ const routes: Routes = [
     component: NewtypeComponent
   },
   {
-    path: 'farmaffairs',
-    component: FarmaffairsComponent
-  },
-  {
-    path: 'farmaffairs/fpi',
-    component: FarmperformaceindexComponent
-  },
-  {
-    path: 'farmaffairs/events',
-    component: EventsComponent
-  },
-  {
     path: 'animalwelfare',
     component: AnimalwelfareComponent
   },
@@ -95,12 +84,16 @@ const routes: Routes = [
     component: HealthhistoryComponent
   },
   {
-    path: 'animalwelfare/healthrecordhistory/pdf',
-    component: PdfComponent
+    path: 'animalwelfare/feed',
+    component: FeedComponent
   },
   {
-    path: 'animalwelfare/healthrecordhistory/pdf',
-    component: PdfComponent
+    path: 'animalwelfare/cleanliness',
+    component: CleanlinessComponent
+  },
+  {
+    path: 'animalwelfare/library',
+    component: LibraryComponent
   },
   {
     path: 'communityconnect',
@@ -115,12 +108,20 @@ const routes: Routes = [
     component: ForumComponent
   },
   {
-    path: 'animalwelfare/feed',
-    component: FeedComponent
+    path: 'farmaffairs',
+    component: FarmaffairsComponent
   },
   {
-    path: 'animalwelfare/library',
-    component: LibraryComponent
+    path: 'farmaffairs/fpi',
+    component: FarmperformaceindexComponent
+  },
+  {
+    path: 'farmaffairs/events',
+    component: EventsComponent
+  },
+  {
+    path: 'pdf',
+    component: PdfComponent
   },
   {
     path: '',

@@ -46,7 +46,7 @@ export class HealthhistoryComponent implements OnInit {
 
   gotopdf(record, field){
     console.log(field)
-    var myurl = `/animalwelfare/healthrecordhistory/pdf?farm=${this.farm}&id=${this.id}&healthrecid=${record.payload.doc.id}&field=${field}`;
+    var myurl = `/pdf?mode=health&farm=${this.farm}&id=${this.id}&healthrecid=${record.payload.doc.id}&field=${field}`;
     this.router.navigateByUrl(myurl);
   }
 

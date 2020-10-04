@@ -1,1 +1,46 @@
-<p>cleanliness works!</p>
+<div class="main">
+    <div class="title">
+        Health System
+    </div>
+    <div class="records">
+        <div class="nameandbord">
+            <div class="topleftbord">
+
+            </div>
+            <div class="farmname">
+                Farms
+            </div>
+            <div class="toprightbord">
+
+            </div>
+        </div>
+        <div class="rowcontent">
+            <div class="leftbord"></div>
+            <div class="rows">
+                <div class="row" *ngFor="let record of farms">
+                    <div style="display: flex; justify-content: space-between; width: 100%;">
+                        <div class="record">
+                            <div class="rec">
+                                <B>ID:</B> {{record.payload.doc.id}}
+                            </div>
+                        </div>
+                        <div class="modify">
+                            <div class="rec icon" style="color: blue;" (click)="switchisupload(record)"> Upload Cleanliness Schedule
+                            </div>
+                            <div class="rec icon" style="color: blue;" (click)="view(record)"> View Cleanliness Schedule
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 100%; display: flex; justify-content: space-between;" *ngIf = "isupload && (recordid == record.payload.doc.id)">
+                        <input type="file" id="file" (change)="upload($event.target.files)" class="ip">
+                        <div class = "button b3" (click) = "uploadfile(record)">Upload</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="rightbord"></div>
+
+        </div>
+        <div class="bottombord"></div>
+    </div>
+</div>

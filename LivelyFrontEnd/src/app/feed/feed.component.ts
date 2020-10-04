@@ -12,18 +12,20 @@ import { Observable } from 'rxjs';
 })
 export class FeedComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private db: AngularFirestore, private auth: AuthService, 
+  constructor(private route: ActivatedRoute, private router: Router, private db: AngularFirestore, private auth: AuthService,
     private storage: AngularFireStorage) { }
 
-  userID:any;
-  farms:any;
+  userID: any;
+  farms: any;
   farm = null;
-  livestock:any;
+  livestock: any;
 
   isupload = false;
 
   farmname = "Farm Name";
   filetoupload: any;
+
+  recordid: any;
 
   task: AngularFireUploadTask;
   percentage: Observable<number>;
@@ -32,37 +34,33 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.getUserState()
-    .subscribe(user => {
-      this.userID = user.uid;
-      this.getfarms();
-    })
+      .subscribe(user => {
+        this.userID = user.uid;
+        this.getfarms();
+      })
   }
 
-  getfarms(){
-    return this.db.collection('Users').doc(this.userID).collection('Farms').snapshotChanges().subscribe(res => {this.farms = res;});
-   }
+  getfarms() {
+    return this.db.collection('Users').doc(this.userID).collection('Farms').snapshotChanges().subscribe(res => { this.farms = res; });
+  }
 
-   getrecords(farm){
-     this.farmname = farm;
-     this.farm = farm;
-    return this.db.collection('Users').doc(this.userID).collection('Farms').doc(farm).collection('Livestock').snapshotChanges().subscribe(res => {this.livestock = res;});
-   }
+  getrecords(farm) {
+    this.farmname = farm;
+    this.farm = farm;
+    return this.db.collection('Users').doc(this.userID).collection('Farms').doc(farm).collection('Livestock').snapshotChanges().subscribe(res => { this.livestock = res; });
+  }
 
-   update(record){
-     var myurl = `/animalwelfare/healthrecord?farm=${this.farm}&id=${record.payload.doc.id}`;
-     this.router.navigateByUrl(myurl);
-   }
+  switchisupload(record) {
+    this.recordid = record.payload.doc.id;
+    this.isupload = true;
+  }
 
-   switchisupload(){
-     this.isupload = true;
-   }
+  upload(files: FileList) {
+    this.filetoupload = files.item(0);
+  }
 
-   upload(files: FileList){
-      this.filetoupload = files.item(0);
-   }
-
-   uploadfile(record){
-     this.isupload = false;
+  uploadfile(record) {
+    this.isupload = false;
     const path = `${this.userID}/${record.payload.doc.id}/feed/${this.filetoupload.name}`;
     const ref = this.storage.ref(path);
     this.task = this.storage.upload(path, this.filetoupload);
@@ -73,12 +71,17 @@ export class FeedComponent implements OnInit {
           console.log(res);
           // var temp = {}
           // temp[key] = res;
-          this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farmname).collection('Livestock').doc(record.payload.doc.id).update({"FeedSchedule": res}).then(e => {
+          this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farmname).collection('Livestock').doc(record.payload.doc.id).update({ "FeedSchedule": res }).then(e => {
           }).catch(e => { console.log(e) });
           //this.db.collection('Files').add({Url: res})});
         });
       });
-   }
+  }
+
+  view(record) {
+    var myurl = `/pdf?mode=feed&farm=${this.farmname}&id=${record.payload.doc.id}`;
+    this.router.navigateByUrl(myurl);
+  }
 
 
 }

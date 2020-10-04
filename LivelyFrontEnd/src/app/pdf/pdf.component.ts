@@ -20,21 +20,32 @@ export class PdfComponent implements OnInit {
   healthrecid: any;
   hcid: any;
 
+  mode: any;
+
   userID: any;
 
   ngOnInit(): void {
     this.auth.getUserState()
       .subscribe(user => {
         this.userID = user.uid;
+        this.mode = this.route.snapshot.queryParams['mode'];
         this.farm = this.route.snapshot.queryParams['farm'];
-        this.id = this.route.snapshot.queryParams['id'];
-        this.field = this.route.snapshot.queryParams['field'];
-        this.healthrecid = this.route.snapshot.queryParams['healthrecid'];
-        console.log(this.farm, this.id, this.field, this.healthrecid);
-        //console.log(this.healthrecid.slice(0, this.healthrecid.length - 26))
-        this.hcid = this.healthrecid.slice(0, this.healthrecid.length - 27) + '+' + this.healthrecid.slice(this.healthrecid.length - 26, this.healthrecid.length);
-        //console.log(hcid);
-        this.geturl();
+        if (this.mode == "cleanliness") {
+          this.getcleanlinessurl();
+        }
+        else {
+          this.id = this.route.snapshot.queryParams['id'];
+          if (this.mode == "health") {
+            this.field = this.route.snapshot.queryParams['field'];
+            this.healthrecid = this.route.snapshot.queryParams['healthrecid'];
+            console.log(this.farm, this.id, this.field, this.healthrecid);
+            this.hcid = this.healthrecid.slice(0, this.healthrecid.length - 27) + '+' + this.healthrecid.slice(this.healthrecid.length - 26, this.healthrecid.length);
+            this.geturl();
+          }
+          else {
+            this.getfeedurl();
+          }
+        }
       })
 
 
@@ -51,6 +62,23 @@ export class PdfComponent implements OnInit {
       if (this.field == "PregnancyCheckUpchedule") this.url = temp.payload.data().PregnancyCheckUpchedule;
 
       console.log(this.url);
+    })
+  }
+
+  getfeedurl() {
+    this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).collection('Livestock').doc(this.id).snapshotChanges().subscribe(res => {
+      var temp;
+      temp = res;
+      this.url = temp.payload.data().FeedSchedule;
+    })
+
+  }
+
+  getcleanlinessurl(){
+    this.db.collection('Users').doc(this.userID).collection('Farms').doc(this.farm).snapshotChanges().subscribe(res => {
+      var temp;
+      temp = res;
+      this.url = temp.payload.data().CleanlinessSchedule;
     })
   }
 

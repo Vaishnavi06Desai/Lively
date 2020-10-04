@@ -26,7 +26,7 @@
             <div class="leftbord"></div>
             <div class="rows">
                 <div class="row" *ngFor="let record of livestock">
-                    <div style="display: flex; justify-content: space-between;">
+                    <div style="display: flex; justify-content: space-between; width: 100%">
                         <div class="record">
                             <div class="rec">
                                 <B>ID:</B> {{record.payload.doc.data().ID}}
@@ -65,15 +65,14 @@
                                 <B>Quantity:</B> {{record.payload.doc.data().Quantity}}
                             </div>
                         </div>
-                        <!-- <div style = "width: 20%; display: flex; flex-direction: column; justify-content: space-between;"> -->
                         <div class="modify">
-                            <div class="rec icon" style="color: blue;" (click)="switchisupload()"> Upload Feed Schedule
+                            <div class="rec icon" style="color: blue;" (click)="switchisupload(record)"> Upload Feed Schedule
                             </div>
-                            <div class="rec icon" style="color: blue;" (click)="update(record)"> View Feed Schedule
+                            <div class="rec icon" style="color: blue;" (click)="view(record)"> View Feed Schedule
                             </div>
                         </div>
                     </div>
-                    <div style="width: 100%; display: flex; justify-content: space-between;" *ngIf = "isupload">
+                    <div style="width: 100%; display: flex; justify-content: space-between;" *ngIf = "isupload && (recordid == record.payload.doc.id)">
                         <input type="file" id="file" (change)="upload($event.target.files)" class="ip">
                         <div class = "button b3" (click) = "uploadfile(record)">Upload</div>
                     </div>
