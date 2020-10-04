@@ -8,6 +8,8 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="node_modules/chart.js/src/chart.js"></script>
@@ -29,6 +31,25 @@
       <app-root></app-root>
     </div>
 
+    <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+     
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+    
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+    </script>
 
 
 </body>

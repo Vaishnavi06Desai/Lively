@@ -1,1 +1,78 @@
-<p>events works!</p>
+
+<!-- Photo grid (modal) -->
+
+  <div class="container" style="background-color:var( --color5)">
+    <br>
+    <h1>Vaccination Programs
+      <span class="glyphicon glyphicon-pushpin logo-small"></span> </h1>
+    <div class="row">
+      
+      <div class="col-sm-5">
+        <img src="../assets/images/cattle-vac.jpg" style="width:450px; height:300px; border:2px solid black" onclick="onClick(this)" alt="Vaccination Programs for Cattle">
+      </div>
+      <div class="col-sm-5">
+        <img src="../assets/images/sheep-vac.jpg" style="width:450px; height:300px; border:2px solid black" onclick="onClick(this)" alt="Sheeps also need injections">
+      </div>
+      <div class="col-sm-2">
+        <div class="row">
+          <img src="../assets/images/cattle-vac1.jpg" style="width:180px; height:100px; border:2px solid black" onclick="onClick(this)" alt="Cattle Vaccination">
+          <p>
+            Cattle undergo vaccination programs to prevent diseases
+          </p>
+        </div>
+        <div class="row">
+          <img src="../assets/images/goat-vac.jpg" style="width:180px; height:100px; border:2px solid black ;" onclick="onClick(this)" alt="Vaccination helps in disease control">
+          <p>
+            Goat vaccination programs are held every year
+          </p>
+        </div>
+      </div>
+    </div>
+    
+<br>
+    <h1>Pregnancy
+    <span class="glyphicon glyphicon-heart logo-small"></span> </h1>
+    <div class="row">
+      
+      <div class="col-sm-5">
+        <img src="../assets/images/preg-goat.jpg" style="width:450px; height:300px; border:2px solid black" onclick="onClick(this)" alt="Good News! We have babies coming">
+      </div>
+      <div class="col-sm-5">
+        <img src="../assets/images/chicken_eggs.jpg" style="width:450px; height:300px; border:2px solid black" onclick="onClick(this)" alt="Too many Hens, Too many Eggs">
+      </div>
+      <div class="col-sm-2">
+        <div class="row">
+          <img src="../assets/images/inventory.jpg" style="width:180px; height:100px; border:2px solid black" onclick="onClick(this)" alt="Good News! We have babies">
+          <p>
+            Pregnant animals require utmost care
+          </p>
+        </div>
+        <div class="row">
+          <img src="../assets/images/cow-baby.jpg" style="width:180px; height:100px; border:2px solid black" onclick="onClick(this)" alt="Good News! We have babies">
+          <p>
+            Another addition to the cattle family
+          </p>
+        </div>
+        <br> <br> <br> <br>
+      </div>
+    </div>
+    
+
+    
+
+  </div>
+      
+
+
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:10" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+
+
