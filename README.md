@@ -41,6 +41,11 @@ Their contact details will be shared with the livestock owners.
 # Technology Stack:
 Angular and Firebase
 
+# Audience:
+1. Website takes care of the colour blind.
+2. Available in almost all languages.
+3. A chat bot to help understand and navigate the site. Also helps the technologically challenged or specially abled people.
+
 # Scope:
 1. Location tracking and storing
 2. One to one communication
