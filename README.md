@@ -33,3 +33,15 @@ This module has 2 sub-modules
 The sub-modules include:
   1. Events: To display the events that occured in the farm like vaccination programs, pregnancies
   2. Farm Performance Index: To indicate the performance of the farm based on factors like health condition, increase in production, age group etc
+  
+## 5. Registrations
+Vets, Medical Centers, Waste Management Centers, NGOs are allowed to register to the site.
+Their contact details will be shared with the livestock owners.
+
+# Technology Stack:
+Angular and Firebase
+
+# Scope:
+1. Location tracking and storing
+2. One to one communication
+3. Connecting to the vet's system.
