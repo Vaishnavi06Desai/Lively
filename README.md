@@ -1,3 +1,8 @@
+# Team - Viragos
+## Vaishnavi Desai - vaishnavisdesai@gmail.com
+## Kimaya Desai - kimaya.desai941@gmail.com
+## Jhanvi Desai - jhanvisdesai@gmail.com
+
 # Lively
 Lively For Livestock is a portal to ease livestock health management, disease control and increase awareness
 
