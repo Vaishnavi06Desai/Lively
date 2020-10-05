@@ -9,7 +9,6 @@
                 {{errormessage}}
             </div>
             <form [formGroup]="form" class="input">
-                <!-- <div class="input" > -->
                 <input placeholder="Enter Username" formControlName="Username" type="text" class="ip" *ngIf="!username">
                 <div *ngIf="username" class="errormsg">
                     <div class="message sb1">
