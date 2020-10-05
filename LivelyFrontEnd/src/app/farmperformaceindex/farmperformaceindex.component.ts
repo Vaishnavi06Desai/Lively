@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmperformaceindexComponent implements OnInit {
 
+  public doughnutChartLabels_f = ['Sangli', 'Pune', 'Nagpur', 'Mumbai'];
+  public doughnutChartData_f = [80, 160, 200, 100];
+  public doughnutChartType_f = 'doughnut';
+
   public doughnutChartLabels_p = ['Poor', 'Average', 'Good', 'Healthy'];
   public doughnutChartData_p = [100, 150, 180, 110];
   public doughnutChartType_p = 'doughnut';

@@ -1,19 +1,24 @@
 .main{
     height: 94vh;
     display: flex;
-    justify-content: center;
+    //justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .content{
     background-color: var(--color5);
-    flex-basis: 80%;
+    width: 80%;
+    align-self: center;
     display: flex;
     flex-direction: column;
 }
 
 .title{
-    height: 10vh;
-    background-color: aqua;
+    margin-top: 1%;
+    height:calc(10vh);
+    text-align: center;
+    font-size: 300%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .forum{

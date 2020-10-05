@@ -42,12 +42,16 @@ export class HealthformComponent implements OnInit {
   vsfileToUpload: any;
   pcsfileToUpload: any;
 
+  link: any;
+  islink: boolean = false;
+
   ngOnInit(): void {
     this.auth.getUserState()
       .subscribe(user => {
         this.userID = user.uid;
         this.farm = this.route.snapshot.queryParams['farm'];
         this.id = this.route.snapshot.queryParams['id'];
+        this.link = `http://localhost:4200/animalwelfare/healthrecord?farm=${this.farm}&id=${this.id}`
         this.canbepregnantfunc();
         //console.log(farm, id);
       })
@@ -163,5 +167,22 @@ export class HealthformComponent implements OnInit {
   history(){
     var myurl = `/animalwelfare/healthrecordhistory?farm=${this.farm}&id=${this.id}`;
     this.router.navigateByUrl(myurl);
+  }
+
+  getalink(bool){
+    this.islink = !bool;
+  }
+
+  copy(){
+  var copyText = document.getElementById("myInput") as HTMLInputElement;
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  this.islink = false;
+  window.alert("Text copied!");
+  }
+
+  back(){
+    this._location.back();
   }
 }

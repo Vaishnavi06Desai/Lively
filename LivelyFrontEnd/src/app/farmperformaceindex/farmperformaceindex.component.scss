@@ -15,6 +15,12 @@
   color: white; /* White text color */
 }
 
+.events{
+  flex-basis: 40%;
+  font-size: 200%;
+  line-height: 200%;
+  text-align: center;
+}
 .poultry-m {width: 90%; background-color: #4CAF50;} /* Green */
 .cattle-m {width: 60%; background-color: #2196F3;} /* Blue */
 .pigs-m {width: 55%; background-color: #f44336;} /* Red */
@@ -24,3 +30,7 @@
 .cattle-f {width: 80%; background-color: #219;} /* Blue */
 .pigs-f {width: 65%; background-color: #ff449b;} /* Red */
 .goats-f {width: 50%; background-color: #3a3337;} /* Dark Grey */
+
+.main{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

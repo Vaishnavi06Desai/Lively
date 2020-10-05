@@ -22,7 +22,7 @@ export class AppComponent {
       });
       (function(d, m){
         var kommunicateSettings = 
-            {"appId":"33cc8c1dd547d6c935ffd8618edbe661d","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            {"appId":"300bf55d7e74456b47b2473c55f2d22c4","popupWidget":true,"automaticChatOpenOnNavigation":true};
         var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
         s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
         var h = document.getElementsByTagName("head")[0]; h.appendChild(s);

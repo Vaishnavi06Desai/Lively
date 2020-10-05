@@ -15,12 +15,12 @@
                 </mat-select>
             </mat-form-field>
             <div class="optional">
-                <div class="add" (click) = "flipcheckup(ischeckup)">
+                <div class="add" (click)="flipcheckup(ischeckup)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!ischeckup">
+                        <div class="addbut" *ngIf="!ischeckup">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "ischeckup">
+                        <div class="addbut" *ngIf="ischeckup">
                             &#x2212;
                         </div>
                     </div>
@@ -28,17 +28,17 @@
                         Upload Checkup Schedule
                     </div>
                 </div>
-                <div class="ops" *ngIf = "ischeckup">
+                <div class="ops" *ngIf="ischeckup">
                     <input type="file" id="file" (change)="cus($event.target.files)" class="ip">
                 </div>
             </div>
             <div class="optional">
-                <div class="add" (click) = "flipmedrep(ismedrep)">
+                <div class="add" (click)="flipmedrep(ismedrep)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!ismedrep">
+                        <div class="addbut" *ngIf="!ismedrep">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "ismedrep">
+                        <div class="addbut" *ngIf="ismedrep">
                             &#x2212;
                         </div>
                     </div>
@@ -46,17 +46,17 @@
                         Upload Medical Report
                     </div>
                 </div>
-                <div class="ops" *ngIf = "ismedrep">
+                <div class="ops" *ngIf="ismedrep">
                     <input type="file" id="file" (change)="mr($event.target.files)" class="ip">
                 </div>
             </div>
             <div class="optional">
-                <div class="add" (click) = "flipdisease(isdisease)">
+                <div class="add" (click)="flipdisease(isdisease)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!isdisease">
+                        <div class="addbut" *ngIf="!isdisease">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "isdisease">
+                        <div class="addbut" *ngIf="isdisease">
                             &#x2212;
                         </div>
                     </div>
@@ -64,17 +64,17 @@
                         Disease
                     </div>
                 </div>
-                <div class="ops" *ngIf = "isdisease">
+                <div class="ops" *ngIf="isdisease">
                     <input placeholder="Enter Disease Name" formControlName="Disease" type="text" class="ip">
                 </div>
             </div>
             <div class="optional">
-                <div class="add" (click) = "flipvaccination(isvaccination)">
+                <div class="add" (click)="flipvaccination(isvaccination)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!isvaccination">
+                        <div class="addbut" *ngIf="!isvaccination">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "isvaccination">
+                        <div class="addbut" *ngIf="isvaccination">
                             &#x2212;
                         </div>
                     </div>
@@ -82,19 +82,21 @@
                         Vaccination
                     </div>
                 </div>
-                <div class="ops" *ngIf = "isvaccination">
+                <div class="ops" *ngIf="isvaccination">
                     <input type="file" id="file" (change)="vs($event.target.files)" class="ip">
-                    <textarea placeholder="Enter Vaccination Description" formControlName="VaccinationDescription" type="text" class="ip"></textarea>
-                    <input placeholder="Enter Vaccination Date" formControlName="VaccinationDate" type="text" class="ip">
+                    <textarea placeholder="Enter Vaccination Description" formControlName="VaccinationDescription"
+                        type="text" class="ip"></textarea>
+                    <input placeholder="Enter Vaccination Date" formControlName="VaccinationDate" type="text"
+                        class="ip">
                 </div>
             </div>
-            <div class="optional" *ngIf = "canbepregnant">
-                <div class="add" (click) = "flippregnancy(ispregnancy)">
+            <div class="optional" *ngIf="canbepregnant">
+                <div class="add" (click)="flippregnancy(ispregnancy)">
                     <div class="addbutcontain">
-                        <div class = "addbut" *ngIf = "!ispregnancy">
+                        <div class="addbut" *ngIf="!ispregnancy">
                             &#x002B;
                         </div>
-                        <div class = "addbut" *ngIf = "ispregnancy">
+                        <div class="addbut" *ngIf="ispregnancy">
                             &#x2212;
                         </div>
                     </div>
@@ -102,10 +104,11 @@
                         Pregnancy
                     </div>
                 </div>
-                <div class="ops" *ngIf = "ispregnancy">
+                <div class="ops" *ngIf="ispregnancy">
                     <input placeholder="Enter Due Date" formControlName="PregnancyDueDate" type="text" class="ip">
-                <input type="file" id="file" (change)="pcs($event.target.files)" class="ip">
-                <textarea placeholder="Enter Medication details" formControlName="PregnancyMedicationDetails" type="text" class="ip"></textarea>
+                    <input type="file" id="file" (change)="pcs($event.target.files)" class="ip">
+                    <textarea placeholder="Enter Medication details" formControlName="PregnancyMedicationDetails"
+                        type="text" class="ip"></textarea>
                 </div>
             </div>
         </form>
@@ -115,6 +118,18 @@
             </div>
             <div class="button" (click)="history()">
                 Check Health Record History
+            </div>
+            <div class="button" (click)="getalink(islink)">
+                Get a link
+            </div>
+            <div class="button" (click)="back()">
+                Back
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-evenly; width: 100%;" *ngIf="islink">
+            <input class="getlink" id="myInput" value="{{link}}" type="text">
+            <div class="button b3" (click)="copy()">
+                Copy
             </div>
         </div>
     </div>
