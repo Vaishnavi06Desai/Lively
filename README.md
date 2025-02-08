@@ -2,6 +2,14 @@
 
 **Lively For Livestock** is a comprehensive portal designed to streamline livestock health management, disease control, and promote awareness. It empowers farm owners, veterinarians, and associated professionals with a unified platform to manage the well-being of livestock efficiently.
 
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/558db89a-8125-4589-8b62-b3da89d5570f" />
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/04d0c819-6e69-467d-b3c0-c149a97b91b8" />
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/641e5b0c-1bc6-4b13-9a4d-4c26b4016a9a" />
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/487ca99d-bed9-47de-84d9-5a50bacf627d" />
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/0722ba8c-c8df-41e6-b715-64708298d217" />
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/799290c2-2065-41ac-ae1b-52308a5eab4e" />
+
+
 ## 🚀 Key Modules
 
 ### 1. **Inventory Management**
